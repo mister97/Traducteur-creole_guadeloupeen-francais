@@ -45157,7 +45157,7 @@
   },
   {
     "Mot": "PA",
-    "Traduction": "Pas (nom",
+    "Traduction": "Pas (nom)",
     "Exemples": "-",
     "Synonymes": "maché"
   },
@@ -55123,7 +55123,7 @@
   },
   {
     "Mot": "SIPRIZ",
-    "Traduction": "Suprise",
+    "Traduction": "Surprise",
     "Exemples": "-",
     "Synonymes": "-"
   },
@@ -65104,5 +65104,143 @@
     "Traduction": "Lorgner, regarder, épier, surveiller",
     "Exemples": "-",
     "Synonymes": "gad, koukougyègyè"
+  },
+  {
+    "Mot": "TONG",
+    "Traduction": "Tongs, savate, claquette, sandale",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TÒS",
+    "Traduction": "Torse, poitrine, buste",
+    "Exemples": "-",
+    "Synonymes": "Bis, Lèstonmak"
+  },
+  {
+    "Mot": "FLOU",
+    "Traduction": "Flou, trouble",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TRANBLÉ",
+    "Traduction": "Trembler, secouer, frissonner, craindre, frémir, trembloter",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PIPIY",
+    "Traduction": "Pupille",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "O",
+    "Traduction": "Au, aux",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "OTAN",
+    "Traduction": "Autant, également, pareillement",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "O",
+    "Traduction": "Ou, où, ou bien",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ENSTEN",
+    "Traduction": "Instinct, intuition, flair",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AN LÒT MEN",
+    "Traduction": "D'un autre côté, au contraire, à l'opposé",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ASIRÉ",
+    "Traduction": "Assurer, s'assurer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TWOUBLÉ / TROUBLÉ",
+    "Traduction": "Troubler, perturber, déconcerter",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BÈT CHASÉ",
+    "Traduction": "Proie (litt : bête chassée)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉBAT",
+    "Traduction": "Débattre, se débattre, délibérer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TANTAKUL",
+    "Traduction": "Tentacule",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "NAVIGÉ",
+    "Traduction": "Naviguer, voguer, caboter",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SANTIMÈT",
+    "Traduction": "Centimètre",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TOULON",
+    "Traduction": "Tout le long",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FOLI",
+    "Traduction": "Folie, démence, délire, déraison, aberration",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "VRÉ",
+    "Traduction": "Vrai(e)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÉMINIS",
+    "Traduction": "Féministe",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "CHYÈN",
+    "Traduction": "Chienne",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LONTAN",
+    "Traduction": "Longtemps",
+    "Exemples": "-",
+    "Synonymes": "-"
   }
 ]
