@@ -34080,7 +34080,7 @@
     "Synonymes": "-"
   },
   {
-    "Mot": "LAKANPANG",
+    "Mot": "LAKANPANGN",
     "Traduction": "Campagne",
     "Exemples": "-",
     "Synonymes": "-"
@@ -65240,6 +65240,1140 @@
   {
     "Mot": "LONTAN",
     "Traduction": "Longtemps",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ADÈMI-TRENNCHA",
+    "Traduction": "Couci-couça",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ALABLANNI/OBLANNI/OBLANCHI",
+    "Traduction": "Exposer au soleil. ",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ALABLANNI/OBLANNI/OBLANCHI",
+    "Traduction": "Pour les dents : mettre les dents dehors, rire, sourire",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ALBIPLAS",
+    "Traduction": "Sparadrap",
+    "Exemples": "-",
+    "Synonymes": "Pansman"
+  },
+  {
+    "Mot": "PANSMAN",
+    "Traduction": "Pansement",
+    "Exemples": "-",
+    "Synonymes": "Albiplas"
+  },
+  {
+    "Mot": "KONPRÈS",
+    "Traduction": "Compresse",
+    "Exemples": "-",
+    "Synonymes": "Pansman"
+  },
+  {
+    "Mot": "BIK",
+    "Traduction": "Stylo",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANRÉYALITÉ",
+    "Traduction": "En réalité",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GAZÈ(Z)",
+    "Traduction": "Gazeux, gazeuse",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AMÒWTI",
+    "Traduction": "Amortir, atténuer, calmer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AMÒWTISÈ",
+    "Traduction": "Amortisseur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BWÈTAMO",
+    "Traduction": "Lexique",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SENSÉRITÉ",
+    "Traduction": "Sincérité",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FIDÉLITÉ",
+    "Traduction": "Fidélité",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SENSÈR/SENSÈW",
+    "Traduction": "Sincère",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOURÈ(Z)",
+    "Traduction": "Coureur, coureuse",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AMATÈ",
+    "Traduction": "Amateur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ATIPILON-MAGOTON",
+    "Traduction": "Clopin-clopant",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BANBÒCH",
+    "Traduction": "Bombance, amusement, ripaille",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÈWTILITÉ/LAFÈWTILITÉ",
+    "Traduction": "Fertilité",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BAWON",
+    "Traduction": "Baron",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BÉ/BÉKA",
+    "Traduction": "Coûte que coûte",
+    "Exemples": "-",
+    "Synonymes": "Koutkilon"
+  },
+  {
+    "Mot": "MASÉRÉ",
+    "Traduction": "Macérer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MASÉRASYON",
+    "Traduction": "Macération",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BRANGÉ/BWANGÉ/BWANGLÈ/BRANGLÈ",
+    "Traduction": "Grabat",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PONP",
+    "Traduction": "Pompe",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PÉSA",
+    "Traduction": "Pouvoir",
+    "Exemples": "-",
+    "Synonymes": "Pé"
+  },
+  {
+    "Mot": "FÈWMÈTI",
+    "Traduction": "Fermeture",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "CHINYA",
+    "Traduction": "Pleurnichard",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "VÈWSÉ/VÈRSÉ",
+    "Traduction": "Verser",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "CHOFRÈT",
+    "Traduction": "Chofrette, réchaud",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AGRIKÒL",
+    "Traduction": "Agricol(e)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LAZI",
+    "Traduction": "Asie",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÈGRÉ",
+    "Traduction": "Degré",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉMANTIBILÉ",
+    "Traduction": "Briser, saccager, abîmer, éventrer",
+    "Exemples": "-",
+    "Synonymes": "Dékalboré"
+  },
+  {
+    "Mot": "DÉKOWÒM",
+    "Traduction": "Rang, statut",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉLOUDI",
+    "Traduction": "Alléger, rendre léger",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DYAMÈT",
+    "Traduction": "Diamètre",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉPANDÉMWA",
+    "Traduction": "Prêt-à-porter",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÈNYÉ BOYO",
+    "Traduction": "Benjamin, dernier né",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PRÈMYÉ BOYO",
+    "Traduction": "Aîné, premier né",
+    "Exemples": "-",
+    "Synonymes": "Grann"
+  },
+  {
+    "Mot": "DOUKOU",
+    "Traduction": "Conjoncture",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DOUVANTI",
+    "Traduction": "Devanture",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DOUVANTI",
+    "Traduction": "Parties sexuelles",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ÉTONNÉ",
+    "Traduction": "Élaguer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "OTORIZASYON",
+    "Traduction": "Autorisation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ÈGZÉYAT",
+    "Traduction": "Permission de sortir, billet de sortie",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SINYAL",
+    "Traduction": "Signal",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FANNAL",
+    "Traduction": "Fanal, feu, phare",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÈ SIWAWA",
+    "Traduction": "Pulluler",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FITAY",
+    "Traduction": "Seau, baril, tonneau",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DIJÉSYON",
+    "Traduction": "Digestion",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SINIZIT",
+    "Traduction": "Sinusite",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANTIÒKSIDAN",
+    "Traduction": "Antioxidant",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "VITAMIN",
+    "Traduction": "Vitamine",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DISTILRI",
+    "Traduction": "Distillerie",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ISTOKÉ/STOKÉ",
+    "Traduction": "Stocker",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GADPOLIS",
+    "Traduction": "Policier municipal",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GALIMAKYA",
+    "Traduction": "Charabia, baragoin",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GALTA",
+    "Traduction": "Galetas",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GOGO",
+    "Traduction": "Homonyme",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SÉNATÈ",
+    "Traduction": "Sénateur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GRAN-NYAN/GRAN-GNAN",
+    "Traduction": "Prétention, vanité, snob",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KAFITYÈ",
+    "Traduction": "Cafetière",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GRINYÉ",
+    "Traduction": "Grimacer, rire jaune",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GRIMAS",
+    "Traduction": "Grimace",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "HÈK",
+    "Traduction": "Mouette",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "IFOLANG-PALANMANG NAW-FLAW",
+    "Traduction": "Immédiatement, tout de suite",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "JENTIKASYON (PA-)",
+    "Traduction": "Par exprès, en abondance",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "JWENTI-VWATI",
+    "Traduction": "Vermine, étran, ordure, merde",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KABÉCHÉ",
+    "Traduction": "Réfléchir",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOLÈKTÈ",
+    "Traduction": "Collecteur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KANPÉ",
+    "Traduction": "Rétorquer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KANTÉ",
+    "Traduction": "Gîter, pencher",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GANA",
+    "Traduction": "Ghana",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SWAHILI",
+    "Traduction": "Swahili",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KODA",
+    "Traduction": "Fin (morceau de gwoka)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FRÈZÈ",
+    "Traduction": "Allure, apparence",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANTOURÉ",
+    "Traduction": "Entourer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOKOUMA",
+    "Traduction": "Cauchemard",
+    "Exemples": "-",
+    "Synonymes": "Kòkma"
+  },
+  {
+    "Mot": "RANPLASÉ",
+    "Traduction": "Remplacer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉMOLI",
+    "Traduction": "Démolir",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOULÉ TIMOUN",
+    "Traduction": "Avorter",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOULWÒCH/KOUTWÒCH",
+    "Traduction": "Solécisme, barbarisme",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOU LAKÒDÉYON-LA",
+    "Traduction": "Insulte suprême en Guadeloupe qui se réfère au sexe de la mère",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "NÉSANS",
+    "Traduction": "Naissance",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TONBO",
+    "Traduction": "Tombeau",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GARDYEN/GAWDYEN(ÈN)",
+    "Traduction": "Gardien, gardienne",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PRÉTANN",
+    "Traduction": "Prétendre",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉKAPITÉ",
+    "Traduction": "Décapiter",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOURI VIKOU",
+    "Traduction": "Selivrer à la débauche",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KRAPILÈ",
+    "Traduction": "Odieux",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MÉPRIZAB",
+    "Traduction": "Méprisable",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ENKALIFYAB",
+    "Traduction": "inqualifiable",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉGOUTAN",
+    "Traduction": "Dégoutant",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LADI (FÈ-)",
+    "Traduction": "Faire semblant",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GRAFIS",
+    "Traduction": "Graphiste",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PLASTISYEN(ÈN)",
+    "Traduction": "Plasticien, plasticienne",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANTIY",
+    "Traduction": "Antilles",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÒKTORA",
+    "Traduction": "Doctorat",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "VIDÉYAS",
+    "Traduction": "Vidéaste",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÒWMATÈ/FÒRMATÈ(Z)",
+    "Traduction": "Formateur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PÒTRÉYÈ",
+    "Traduction": "Illustrateur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MITIYÈL",
+    "Traduction": "Mutuel, mutuelle",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PASYON",
+    "Traduction": "Passion",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LAKOMINAL",
+    "Traduction": "L'école laïque",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PAWTISIPÉ/PARTISIPÉ/PATISIPÉ",
+    "Traduction": "Participer, prendre part",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PWOTÈKSYON/PROTÈKSYON",
+    "Traduction": "Protection",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ORÉZON",
+    "Traduction": "Oraison",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KWAYAN",
+    "Traduction": "Croyant",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PRATIKÉ/PWATIKÉ",
+    "Traduction": "Pratiquer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "JÉZIKRI",
+    "Traduction": "Jésus-Christ",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BÉNÉFISYÉ",
+    "Traduction": "Bénéficier",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KONDIKTÈ",
+    "Traduction": "Conducteur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LAPONP",
+    "Traduction": "Le service départemental d'incendie et de secours (SDIS)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LÈSPRI BAS (MOUN A-)",
+    "Traduction": "Demeuré, bête",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LÈSTINANS",
+    "Traduction": "Immédiatement, tout de suite, aussitôt",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LÒG",
+    "Traduction": "Ogre",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LÒG",
+    "Traduction": "Orgue",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AFWA",
+    "Traduction": "à froid",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MACHIKOPYÈ",
+    "Traduction": "Complice, acolyte",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LISTRÉ",
+    "Traduction": "Lustrer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KATOLIK",
+    "Traduction": "Catholique",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MISYONNÈ",
+    "Traduction": "Missionnaire",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MISYON",
+    "Traduction": "Mission",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MEN A PWÈL",
+    "Traduction": "Fénéant, paresseux",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "WONCHONNÉ",
+    "Traduction": "Ronchonner, rouspéter",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MÈZÈ",
+    "Traduction": "Mademoiselle",
+    "Exemples": "-",
+    "Synonymes": "Manzè"
+  },
+  {
+    "Mot": "LAWJANTIN",
+    "Traduction": "Argentine",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "NYAK",
+    "Traduction": "Rien",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KYAK (TI-)",
+    "Traduction": "Un peu, un brin de",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PAKONNÈT",
+    "Traduction": "Ignorance",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PALÉ WANN-FLANG",
+    "Traduction": "Parler anglais",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PONPON",
+    "Traduction": "Prostituée de Santo Domingo",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PRAN PAWTIKILYÉ",
+    "Traduction": "Prendre son chez soi",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MÒTYÉ",
+    "Traduction": "Mortier",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PÒPAYEN",
+    "Traduction": "Propre à rien",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PÒTRÉ KRACHÉ",
+    "Traduction": "Sosie",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PALM",
+    "Traduction": "Palme",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PALMÉ",
+    "Traduction": "Palmer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TIZANN",
+    "Traduction": "Tisane",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RANJÉ KABANN A ON MOUN",
+    "Traduction": "Régler son compte à quelqu'un",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉTÉTRANKIL",
+    "Traduction": "Sortilège, coups ou drogue administrés à quelqu'un pour le faire tenir en place",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PAKISTAN",
+    "Traduction": "Pakistan",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KONFIWMASYON/KONFIRMASYON",
+    "Traduction": "Confirmation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ALINYÉ",
+    "Traduction": "Aligner",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SAKRÈMAN",
+    "Traduction": "Sacrement",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AKONPANNYÉ/AKONPANGNÉ",
+    "Traduction": "Accompagner",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉSÈPSYON",
+    "Traduction": "Réception",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SÉYO",
+    "Traduction": "Seau d'eau",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SIVOKÉ",
+    "Traduction": "Suffoquer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SIWKONSIZYON/SIRKONSIZYON",
+    "Traduction": "Circoncision",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SODLI",
+    "Traduction": "Robe de chambre, peignoir",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SONBRIN",
+    "Traduction": "Obscurité, ténèbre",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KRÉYATI",
+    "Traduction": "Créature",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANJÉNÉRAL",
+    "Traduction": "En général",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GRIMWA",
+    "Traduction": "Grimoire",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MAJI",
+    "Traduction": "Magie",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SOUSINYÉ/SOUSIGNÉ",
+    "Traduction": "Soussigné",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TALIWAWA",
+    "Traduction": "Babioles, franfreluche, misère",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TALONNÈ",
+    "Traduction": "Étalon",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TAN-DANNTAN",
+    "Traduction": "Jadis, autrefois",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GINÉ",
+    "Traduction": "Guinée",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SÉNÉGAL/SINIGAL",
+    "Traduction": "Sénégal",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TOLENSON",
+    "Traduction": "Kiki, zigounette",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TOUKOUNANBRANDI",
+    "Traduction": "Désinvolte, irrespectueux, je-men-fichiste",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TOUMVAS",
+    "Traduction": "Pétrin, ennui",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "VENTIKASYON (PA-)",
+    "Traduction": "Par exprès, en abondance",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "VIVANDÉ",
+    "Traduction": "Mener la vie, faire la nouba",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "WÒBAKÒ",
+    "Traduction": "Robe traditionnelle de grand-mère",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GRANFAL",
+    "Traduction": "Glouton, goinfre",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOLONIZATÈ",
+    "Traduction": "Colonisateur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ÈSPWATÈ",
+    "Traduction": "Exploitant, exploiteur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANVAYISÈ",
+    "Traduction": "Envahisseur",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MAWGERIT",
+    "Traduction": "Marguerite",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KATAPLAZ",
+    "Traduction": "Cataplasme",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PRÒSPÉRÉ/PWÒSPÉRÉ",
+    "Traduction": "Prospérer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ZING",
+    "Traduction": "Très peu",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ZOKO/ZÒKÒ",
+    "Traduction": "Trognon, squelette, os",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DRAGON",
+    "Traduction": "Dragon",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ADMINISTRATIF",
+    "Traduction": "Administratif",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PARANTAL",
+    "Traduction": "Parental",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ÈKSÉLANS",
+    "Traduction": "Excellence",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ÈKSÉLAN",
+    "Traduction": "Excellent",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÉLISITASYON",
+    "Traduction": "Félicitation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SATISFAKSYON",
+    "Traduction": "Satisfaction",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KONGRÉGASYON",
+    "Traduction": "Congrégation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÉDÉRASYON",
+    "Traduction": "Fédération",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÉDÉRÉ",
+    "Traduction": "Fédérer",
     "Exemples": "-",
     "Synonymes": "-"
   }
