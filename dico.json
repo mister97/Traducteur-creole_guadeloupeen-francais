@@ -23772,8 +23772,8 @@
     "Synonymes": "mi"
   },
   {
-    "Mot": "INTÈWDI",
-    "Traduction": "Interdit",
+    "Mot": "ENTÈWDI/ENTÈRDI",
+    "Traduction": "Interdire, interdit",
     "Exemples": "-",
     "Synonymes": "-"
   },
@@ -47149,7 +47149,7 @@
   },
   {
     "Mot": "PIDÈ",
-    "Traduction": "Sans pudeur",
+    "Traduction": "Sans pudeur, pudeur",
     "Exemples": "-",
     "Synonymes": "endijès"
   },
@@ -66374,6 +66374,540 @@
   {
     "Mot": "FÉDÉRÉ",
     "Traduction": "Fédérer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ÈGZAKTÉMAN",
+    "Traduction": "Exactement",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ÈGZAKT",
+    "Traduction": "Exact",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉKIPIRÉ",
+    "Traduction": "Récupérer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SOULWÉ",
+    "Traduction": "Sous-louer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KÒTDIVWA",
+    "Traduction": "Côte d'Ivoire",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉFLÈKSYON",
+    "Traduction": "Réflexion",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KLOCHÈT",
+    "Traduction": "Clochette",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LARENTRÉ",
+    "Traduction": "La rentrée scolaire",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ALÉPÒK",
+    "Traduction": "À l'époque, à ce temps",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KÒMIFO",
+    "Traduction": "Comme il faut",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KORÈKT",
+    "Traduction": "Correct(e), passable",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FIKSÉ",
+    "Traduction": "Fixer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KLÒRDÉKONÉ",
+    "Traduction": "Chlordéconer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "VÈRGÒGN/VÈWGÒGN",
+    "Traduction": "Vergogne",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANONS",
+    "Traduction": "Annonce",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SOLID",
+    "Traduction": "Solide",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ASIMÉ",
+    "Traduction": "Assumer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "POPOZÉ/PWOPOZÉ/PROPOZÉ",
+    "Traduction": "Proposer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MENS",
+    "Traduction": "Mince",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KABÉCHAJ",
+    "Traduction": "Réflexion, raisonnement, analyse, cogitation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PLÈ",
+    "Traduction": "Plaire",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ODÉPA",
+    "Traduction": "Au départ, au début",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TRIBIL",
+    "Traduction": "Tracas, problème, ennui, souçi, tourment",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SAJFANM/SACHFANM",
+    "Traduction": "Sage-femme",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "GASPIYÉ",
+    "Traduction": "Gaspiller",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "VANN",
+    "Traduction": "Vanne, écluse",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "POUTAN",
+    "Traduction": "Pourtant, cependant, néanmoins, toutefois",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MATIRIZÉ/MAWTIRIZÉ",
+    "Traduction": "Martyriser, torturer, supplicier",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MATI/MAWTI/MAWTIW",
+    "Traduction": "Martyr, victime, sacrifié",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FIKSASYON",
+    "Traduction": "Fixation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉPITASYON",
+    "Traduction": "Réputation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉPITASYONÈL",
+    "Traduction": "Réputationnel(le)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "WAYÒM",
+    "Traduction": "Royaume",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉGRÈ",
+    "Traduction": "Regret",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉMÒ/RÉMÒW",
+    "Traduction": "Remord",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BANKÉ",
+    "Traduction": "Banquet",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PATISYÉ(ÈZ)",
+    "Traduction": "Patissier, patissière",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ENSTRIKSYON",
+    "Traduction": "Instruction",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ENSTRI",
+    "Traduction": "Instruire, éduquer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MORALITÉ/MOWALITÉ",
+    "Traduction": "Moralité",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ASÉTÈGA",
+    "Traduction": "à cet égard, à ce sujet, à ce propos, sur ce point",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SENDIKALIS",
+    "Traduction": "Syndicaliste",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÈYTON",
+    "Traduction": "Feuilleton",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SIYIFIKASYON/SIGNIFIKASYON",
+    "Traduction": "Signification, sens",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SIYIFIKATIVMAN/SIGNIFIKATIVMAN",
+    "Traduction": "Significativement, considérablement, notablement, nettement",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SIYIFYÉ/SIGNIFYÉ",
+    "Traduction": "Signifier, exprimer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "MANNÉVRÉ",
+    "Traduction": "Maœuvrer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FONÉTIK",
+    "Traduction": "Phonétique",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FONÉTIKMAN",
+    "Traduction": "Phonétiquement",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "FÒSMAN",
+    "Traduction": "Difficulté",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SOLANÈL",
+    "Traduction": "Solennel(le)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KONVOKÉ",
+    "Traduction": "Convoquer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KONVOKASYON",
+    "Traduction": "Convocation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SOLANITÉ",
+    "Traduction": "Solennité",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SÉRÉMONIAL",
+    "Traduction": "Cérémonial(le)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SIFIZAN",
+    "Traduction": "Suffisant",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SIFIZANS",
+    "Traduction": "Suffisance",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉKONPOZÉ",
+    "Traduction": "Décomposer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "TANP",
+    "Traduction": "Tempe",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PRENSIP",
+    "Traduction": "Principe",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PENGWEN",
+    "Traduction": "Pingouin",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "OFINAL",
+    "Traduction": "Au final, en fin de compte, en définitive",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DON",
+    "Traduction": "Don",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AÉRYEN(ÈN)",
+    "Traduction": "Aérien, aérienne",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KONPANNI",
+    "Traduction": "Compagnie",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉZINYÉ/RÉZIGNÉ",
+    "Traduction": "Résigner, accepter, se résoudre, se soumettre",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉZILYANS",
+    "Traduction": "Résilience",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "RÉZILYASYON",
+    "Traduction": "Résiliation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "AFRANCHI/AFWANCHI",
+    "Traduction": "Affranchir, affranchi(e)",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "BIMPARTÉ",
+    "Traduction": "Départ, début",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PANDIL",
+    "Traduction": "Pendule",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ENVOKÉ",
+    "Traduction": "Invoquer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ENVOKASYON",
+    "Traduction": "Invocation",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KOUPÈ-BWA/KOUPÈZ-BWA",
+    "Traduction": "Bûcheron, bûcheronne",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "WOTI",
+    "Traduction": "Rôtir",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ADORÉ",
+    "Traduction": "Adorer",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANPILÉ",
+    "Traduction": "Empiler",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉFLAGRASYON",
+    "Traduction": "Déflagration",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PARAD",
+    "Traduction": "Parade",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANPILMAN",
+    "Traduction": "Empilement, addition",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "SWENTÉ",
+    "Traduction": "Suinter, exsuder, perler",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "KADINASÉ",
+    "Traduction": "Cadenasser",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "DÉKADINASÉ",
+    "Traduction": "Décadenasser",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "OBÉYISANS",
+    "Traduction": "Obéissance",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "OBÉYI",
+    "Traduction": "Obéïr",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "PLOTON",
+    "Traduction": "Peloton, bataillon, brigade, escadron, troupe",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LACHARITÉ",
+    "Traduction": "Charité",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "LORÈ",
+    "Traduction": "Horaire",
+    "Exemples": "-",
+    "Synonymes": "-"
+  },
+  {
+    "Mot": "ANKOURAJMAN",
+    "Traduction": "Encouragement",
     "Exemples": "-",
     "Synonymes": "-"
   }
