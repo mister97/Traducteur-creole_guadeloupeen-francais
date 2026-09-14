@@ -1,0 +1,25 @@
+{
+  "name": "mofwaze",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Mofwazé – dictionnaire Kréyòl Gwadloupéyen ↔ Fransé",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node server.js",
+    "db:generer": "node scripts/sqlite-vers-mysql.mjs",
+    "db:init": "node scripts/db-init.mjs",
+    "admin:hash": "node scripts/hash-mot-de-passe.mjs"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "mysql2": "^3.24.4",
+    "next": "^16.3.5",
+    "nodemailer": "^10.0.10",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}

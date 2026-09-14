@@ -1,0 +1,20 @@
+# Base MariaDB pour le développement local : docker compose up -d
+# (identifiants repris dans .env.example / .env.local)
+services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: mofwaze-mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: dico_kreyol
+      MARIADB_USER: dico
+      MARIADB_PASSWORD: dico
+    ports:
+      - '3307:3306'
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mofwaze-db:/var/lib/mysql
+
+volumes:
+  mofwaze-db:

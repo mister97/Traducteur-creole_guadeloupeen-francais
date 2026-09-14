@@ -1,0 +1,20 @@
+#macOS
+.DS_Store
+
+# dépendances et build
+node_modules/
+.next/
+out/
+
+# secrets
+.env
+.env.local
+.env.production
+.env.*.local
+
+# données générées (seule la version compressée est versionnée, pour l'import initial)
+database/donnees.sql
+
+# logs
+npm-debug.log*
+*.log
