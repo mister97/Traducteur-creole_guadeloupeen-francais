@@ -11,7 +11,7 @@ export default async function PiedDePage() {
           <div>
             <div className="pied__marque">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/icons/logo-header.png" alt="" width="36" height="36" />
+              <img src="/img/logo-header.png" alt="" width="36" height="36" />
               {t.site.nom}
             </div>
             <p>{t.site.sousTitre}</p>

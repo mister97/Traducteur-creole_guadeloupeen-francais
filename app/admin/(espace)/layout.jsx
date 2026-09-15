@@ -13,7 +13,7 @@ export default async function EspaceAdminLayout({ children }) {
       <aside className="admin__barre">
         <Link href="/admin" className="admin__marque">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/icons/logo-header.png" alt="" />
+          <img src="/img/logo-header.png" alt="" />
           <span>
             Mofwazé
             <small>Administration</small>

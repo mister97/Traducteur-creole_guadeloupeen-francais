@@ -64,6 +64,7 @@ Ajoutez ensuite les **variables d'environnement** (bouton *Variables d'environne
 | `DB_USER` | `mofwaze` |
 | `DB_PASSWORD` | le mot de passe de l'étape 2 |
 | `DB_NAME` | `mofwaze` |
+| `DB_SOCKET` | *facultatif* : `/var/run/mysqld/mysqld.sock` pour se connecter par socket local (remplace `DB_HOST`/`DB_PORT`) si l'utilisateur MySQL n'accepte que « localhost » |
 | `SITE_URL` | `https://mofwazajkreyolgwadloupeyen.fr` |
 | `CONTACT_EMAIL` | `kontakt@mofwazajkreyolgwadloupeyen.fr` |
 | `ADMIN_PASSWORD_HASH` | résultat de `npm run admin:hash -- "votre mot de passe"` (à lancer sur votre poste) |
@@ -90,6 +91,8 @@ Tant que le domaine pointe vers GitHub Pages, testez avec l'une de ces méthodes
 
 - **Sous-domaine temporaire :** créez par exemple `beta.mofwazajkreyolgwadloupeyen.fr` dans Plesk, avec la même application Node, et un enregistrement DNS `A` chez OVH vers l'IP du VPS.
 - **Fichier `hosts` de votre ordinateur :** ajoutez `IP_DU_VPS mofwazajkreyolgwadloupeyen.fr`, testez, puis retirez la ligne.
+
+Commencez par ouvrir **`/api/sante`** : elle doit afficher `"ok": true` et le nombre de mots. Sinon, elle donne le code d'erreur MySQL (voir *Dépannage*) et indique quelles variables d'environnement sont définies.
 
 À vérifier :
 
@@ -133,7 +136,13 @@ La base contient désormais tout le dictionnaire et les suggestions :
 
 | Symptôme | Piste |
 | --- | --- |
-| « This page couldn't load » ou erreur 500 | Journaux de l'application Node dans Plesk. Vérifiez les variables `DB_*` et que `npm run build` a bien été exécuté. |
+| Erreur 500 sur l'accueil et les fiches, mais `/a-propos` fonctionne ; « Minified React error #441 » dans la console | La base ne répond pas. Ouvrez `/api/sante` pour obtenir le code, et consultez les journaux (Sites Web & Domaines › *domaine* › Journaux). |
+| `/api/sante` → `ER_ACCESS_DENIED_ERROR` | Mauvais utilisateur ou mot de passe, ou utilisateur limité à « localhost » : essayez `DB_SOCKET=/var/run/mysqld/mysqld.sock` (ou `DB_HOST=127.0.0.1`). |
+| `/api/sante` → `ER_BAD_DB_ERROR` | `DB_NAME` ne correspond à aucune base : reprenez le nom exact affiché dans Plesk (souvent préfixé). |
+| `/api/sante` → `ER_NO_SUCH_TABLE` | Les tables n'ont pas été importées : étape 2. |
+| `/api/sante` → `ECONNREFUSED` / `ENOENT` | Hôte, port ou socket incorrect. |
+| Variables affichées `false` dans `/api/sante` | Elles ne sont pas prises en compte : vérifiez leur saisie dans le panneau Node.js puis **Redémarrer l'application**. |
+| Images de `/icons/…` en 404 | Apache réserve l'adresse `/icons/` sur le serveur : c'est pourquoi les logos sont dans `public/img/`. N'utilisez pas de dossier `public/icons`. |
 | Erreur `SESSION_SECRET doit être défini` | Ajoutez la variable (32 caractères minimum) puis redémarrez. |
 | Les mails ne partent pas | Vérifiez `SMTP_USER` (adresse complète) et `SMTP_PASS`. Le port 465 sortant doit être ouvert sur le VPS. Les erreurs apparaissent dans les journaux, la suggestion est tout de même enregistrée. |
 | Formulaires admin refusés derrière un proxy (erreur d'origine des *Server Actions*) | Vérifiez que nginx transmet l'en-tête `Host`, ou ajoutez le domaine à `experimental.serverActions.allowedOrigins` dans `next.config.mjs`. |

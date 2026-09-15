@@ -29,11 +29,11 @@ export async function generateMetadata() {
     twitter: { card: 'summary_large_image', title: titre, description: t.site.description },
     icons: {
       icon: [
-        { url: '/icons/favicon.ico', sizes: 'any' },
-        { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-        { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/img/favicon.ico', sizes: 'any' },
+        { url: '/img/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/img/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       ],
-      apple: '/icons/apple-touch-icon.png',
+      apple: '/img/apple-touch-icon.png',
     },
   };
 }

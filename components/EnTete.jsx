@@ -31,7 +31,7 @@ export default function EnTete() {
         <div className="entete__rangee">
           <Link href="/" className="marque">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icons/logo-header.png" alt="" width="42" height="42" />
+            <img src="/img/logo-header.png" alt="" width="42" height="42" />
             <span>
               <span className="marque__nom">{t.site.nom}</span>
               <span className="marque__sous-titre">{t.site.sousTitre}</span>
