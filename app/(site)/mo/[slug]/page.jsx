@@ -5,7 +5,8 @@ import BoutonPartage from '@/components/BoutonPartage';
 import { IconeCrayon } from '@/components/Icones';
 import { ficheParSlug } from '@/lib/dico';
 import { textes } from '@/lib/langue';
-import { sansAccents } from '@/lib/normalisation.mjs';
+import { lettreDe, lettreValide } from '@/lib/alphabet';
+import { rechercheKreyol } from '@/lib/normalisation.mjs';
 import { SITE_URL } from '@/lib/site';
 import { f } from '@/lib/textes';
 
@@ -45,7 +46,7 @@ export default async function PageMot({ params }) {
   const fiche = await chargerFiche(params);
   if (!fiche) notFound();
   const { t } = await textes();
-  const lettre = sansAccents(fiche.mot).charAt(0).toLowerCase();
+  const lettre = lettreDe(rechercheKreyol(fiche.mot));
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -66,7 +67,7 @@ export default async function PageMot({ params }) {
             <li>
               <Link href="/">{t.nav.accueil}</Link>
             </li>
-            {/^[a-z]$/.test(lettre) && (
+            {lettreValide(lettre) && (
               <li>
                 <Link href={`/lettre/${lettre}`}>{lettre.toUpperCase()}</Link>
               </li>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Alphabet from '@/components/Alphabet';
 import { IconeCrayon, IconeFlecheDroite } from '@/components/Icones';
 import Recherche from '@/components/Recherche';
 import { formaterJour, jourGuadeloupe, numeroJeu } from '@/lib/dates';
@@ -66,19 +67,7 @@ export default async function Accueil() {
           <h2 className="section__titre" id="titre-alphabet">
             {t.accueil.parcourir}
           </h2>
-          <nav className="alphabet">
-            {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((l) =>
-              lettresPresentes.has(l) ? (
-                <Link key={l} href={`/lettre/${l.toLowerCase()}`}>
-                  {l}
-                </Link>
-              ) : (
-                <span key={l} aria-hidden="true">
-                  {l}
-                </span>
-              ),
-            )}
-          </nav>
+          <Alphabet presentes={lettresPresentes} />
         </section>
 
         <section className="section bandeau">
