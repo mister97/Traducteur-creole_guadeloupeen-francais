@@ -140,7 +140,7 @@ La base contient désormais tout le dictionnaire et les suggestions :
 | `/api/sante` → `ER_ACCESS_DENIED_ERROR` | Mauvais utilisateur ou mot de passe, ou utilisateur limité à « localhost » : essayez `DB_SOCKET=/var/run/mysqld/mysqld.sock` (ou `DB_HOST=127.0.0.1`). |
 | `/api/sante` → `ER_BAD_DB_ERROR` | `DB_NAME` ne correspond à aucune base : reprenez le nom exact affiché dans Plesk (souvent préfixé). |
 | `/api/sante` → `ER_NO_SUCH_TABLE` | Les tables n'ont pas été importées : étape 2. |
-| `/api/sante` → `ECONNREFUSED` / `ENOENT` | Hôte, port ou socket incorrect. |
+| `/api/sante` → `ECONNREFUSED` / `ENOENT` | Hôte, port ou socket incorrect (voir `connexion` dans la réponse). Sur Plesk, `DB_PORT` vaut `3306` : le port `3307` ne sert qu'à la base Docker locale. |
 | Variables affichées `false` dans `/api/sante` | Elles ne sont pas prises en compte : vérifiez leur saisie dans le panneau Node.js puis **Redémarrer l'application**. |
 | Images de `/icons/…` en 404 | Apache réserve l'adresse `/icons/` sur le serveur : c'est pourquoi les logos sont dans `public/img/`. N'utilisez pas de dossier `public/icons`. |
 | Erreur `SESSION_SECRET doit être défini` | Ajoutez la variable (32 caractères minimum) puis redémarrez. |

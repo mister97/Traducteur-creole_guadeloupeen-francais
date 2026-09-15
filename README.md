@@ -23,7 +23,7 @@ npm run db:init                      # crée les tables et importe le dictionnai
 npm run dev                          # http://localhost:3000
 ```
 
-Pour la base Docker, `.env.local` contient :
+Pour la base Docker, `.env.local` contient (le port `3307` est propre à Docker ; en production, c'est `3306`) :
 
 ```
 DB_HOST=127.0.0.1
