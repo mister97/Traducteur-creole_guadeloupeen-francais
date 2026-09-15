@@ -24,6 +24,7 @@ function versEdition(fiche) {
       traduction: s.traduction ?? '',
       synonymes: joindre(s.synonymes),
       termes: joindre(s.termes),
+      exemples: (s.exemples ?? []).map((ex, j) => ({ cle: `s${i}e${j}`, kr: ex.kr ?? '', fr: ex.fr ?? '' })),
     })),
     locutions: (fiche?.locutions ?? []).map((l, i) => ({
       cle: `l${i}`,
@@ -39,7 +40,12 @@ function depuisEdition(e) {
   return {
     mot: e.mot.trim(),
     variantes: decouper(e.variantes),
-    sens: e.sens.map((s) => ({ traduction: s.traduction.trim(), synonymes: decouper(s.synonymes), termes: decouper(s.termes) })),
+    sens: e.sens.map((s) => ({
+      traduction: s.traduction.trim(),
+      synonymes: decouper(s.synonymes),
+      termes: decouper(s.termes),
+      exemples: s.exemples.map((ex) => ({ kr: ex.kr.trim(), fr: ex.fr.trim() })),
+    })),
     locutions: e.locutions.map(({ cle: _cle, ...l }) => l),
   };
 }
@@ -69,6 +75,8 @@ export default function EditeurFiche({ ficheInitiale, nom = 'donnees', mode = 'p
 
   const majSens = (i, champ, valeur) =>
     maj((e) => ({ ...e, sens: e.sens.map((s, j) => (j === i ? { ...s, [champ]: valeur } : s)) }));
+  const majExemples = (i, modif) =>
+    maj((e) => ({ ...e, sens: e.sens.map((s, j) => (j === i ? { ...s, exemples: modif(s.exemples) } : s)) }));
   const majLocution = (i, champ, valeur) =>
     maj((e) => ({ ...e, locutions: e.locutions.map((x, j) => (j === i ? { ...x, [champ]: valeur } : x)) }));
 
@@ -137,6 +145,44 @@ export default function EditeurFiche({ ficheInitiale, nom = 'donnees', mode = 'p
               style={{ minHeight: 60 }}
             />
           </div>
+          <div className="champ">
+            <span className="champ__libelle">
+              {l.exemple} <span className="champ__facultatif">({l.facultatif})</span>
+            </span>
+            {s.exemples.map((ex, j) => (
+              <div key={ex.cle} className="exemple-edition">
+                <input
+                  className="saisie"
+                  value={ex.kr}
+                  placeholder={l.exempleKr}
+                  aria-label={`${l.exempleKr} ${j + 1}`}
+                  onChange={(e) => majExemples(i, (liste) => liste.map((x, k) => (k === j ? { ...x, kr: e.target.value } : x)))}
+                />
+                <input
+                  className="saisie"
+                  value={ex.fr}
+                  placeholder={l.exempleFr}
+                  aria-label={`${l.exempleFr} ${j + 1}`}
+                  onChange={(e) => majExemples(i, (liste) => liste.map((x, k) => (k === j ? { ...x, fr: e.target.value } : x)))}
+                />
+                <button
+                  type="button"
+                  className="bouton-icone bouton-icone--danger"
+                  onClick={() => majExemples(i, (liste) => liste.filter((_, k) => k !== j))}
+                  aria-label={l.retirer}
+                >
+                  <IconeCroix taille={18} />
+                </button>
+              </div>
+            ))}
+            <button
+              type="button"
+              className="bouton-ajout bouton-ajout--petit"
+              onClick={() => majExemples(i, (liste) => [...liste, { cle: cle(), kr: '', fr: '' }])}
+            >
+              <IconePlus taille={16} /> {l.ajouterExemple}
+            </button>
+          </div>
           <div className="champ" style={{ marginBottom: admin ? 18 : 0 }}>
             <label htmlFor={`${id}-syn-${s.cle}`}>
               {l.synonymes} <span className="champ__facultatif">({l.facultatif})</span>
@@ -166,7 +212,7 @@ export default function EditeurFiche({ ficheInitiale, nom = 'donnees', mode = 'p
       <button
         type="button"
         className="bouton-ajout"
-        onClick={() => maj((e) => ({ ...e, sens: [...e.sens, { cle: cle(), traduction: '', synonymes: '', termes: '' }] }))}
+        onClick={() => maj((e) => ({ ...e, sens: [...e.sens, { cle: cle(), traduction: '', synonymes: '', termes: '', exemples: [] }] }))}
       >
         <IconePlus taille={18} /> {l.ajouterSens}
       </button>

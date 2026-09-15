@@ -45,6 +45,18 @@ CREATE TABLE IF NOT EXISTS sens (
   CONSTRAINT fk_sens_entree FOREIGN KEY (entree_id) REFERENCES entrees (id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Exemples d'emploi d'un sens (phrase en créole et sa traduction)
+CREATE TABLE IF NOT EXISTS exemples (
+  id        INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  sens_id   INT UNSIGNED NOT NULL,
+  position  SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  kreyol    TEXT NOT NULL,
+  francais  TEXT NULL,
+  PRIMARY KEY (id),
+  KEY idx_exemples_sens (sens_id, position),
+  CONSTRAINT fk_exemple_sens FOREIGN KEY (sens_id) REFERENCES sens (id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS synonymes (
   id         INT UNSIGNED NOT NULL AUTO_INCREMENT,
   sens_id    INT UNSIGNED NOT NULL,

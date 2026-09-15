@@ -126,6 +126,17 @@ L'ancien site enregistrait un *service worker*. Le nouveau fichier `public/servi
 
 Le dictionnaire lui-même se modifie dans `/admin` : aucune mise en ligne n'est nécessaire.
 
+**Quand une mise à jour ajoute une table** (fichiers dans `database/migrations/`), appliquez-la **avant** de redémarrer l'application, sinon les pages concernées renvoient une erreur 500 :
+
+- Node.js › **Exécuter le script** › `db:init` : crée les tables manquantes sans toucher aux données ;
+- ou importez le fichier de `database/migrations/` dans phpMyAdmin.
+
+`/api/sante` indique `ER_NO_SUCH_TABLE` avec un conseil si une migration a été oubliée.
+
+| Migration | Contenu |
+| --- | --- |
+| `2026-09-15-exemples-par-sens.sql` | Table `exemples` : exemples rattachés à chaque sens |
+
 ## Sauvegardes
 
 La base contient désormais tout le dictionnaire et les suggestions :

@@ -90,6 +90,22 @@ export default async function PageMot({ params }) {
                   <span className="sens-num">{s.num}</span>
                   <div>
                     {s.traduction && <p className="sens-detail__traduction">{s.traduction}</p>}
+                    {s.exemples.length > 0 && (
+                      <ul className="exemples" aria-label={t.fiche.exemples}>
+                        {s.exemples.map((ex, i) => (
+                          <li key={i}>
+                            <span className="exemples__kr" lang="gcf">
+                              {ex.kr}
+                            </span>
+                            {ex.fr && (
+                              <span className="exemples__fr" lang="fr">
+                                {ex.fr}
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     {s.synonymes.length > 0 && (
                       <div className="sens-detail__ligne">
                         <span className="sens-detail__libelle">{t.fiche.synonymes}</span>

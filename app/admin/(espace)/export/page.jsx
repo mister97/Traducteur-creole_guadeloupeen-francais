@@ -10,7 +10,7 @@ export default function PageExport() {
         <section className="carte admin-bloc">
           <h2>Excel (.xlsx)</h2>
           <p>
-            Trois onglets : <strong>Mots</strong> (une ligne par sens, avec graphies, synonymes et termes français),{' '}
+            Trois onglets : <strong>Mots</strong> (une ligne par sens, avec graphies, exemples, synonymes et termes français),{' '}
             <strong>Expressions</strong> et <strong>Suggestions</strong>.
           </p>
           <a className="bouton bouton--principal" href="/admin/export/xlsx">

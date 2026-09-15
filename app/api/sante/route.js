@@ -15,8 +15,11 @@ export async function GET() {
   );
 
   try {
-    const { mots } = await premiere('SELECT COUNT(*) AS mots FROM entrees');
-    return Response.json({ ok: true, base: 'connectée', mots, variables }, { headers: { 'Cache-Control': 'no-store' } });
+    // Interroge aussi les tables ajoutées après la mise en ligne, pour repérer une migration oubliée
+    const { mots, exemples } = await premiere(
+      'SELECT (SELECT COUNT(*) FROM entrees) AS mots, (SELECT COUNT(*) FROM exemples) AS exemples',
+    );
+    return Response.json({ ok: true, base: 'connectée', mots, exemples, variables }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (erreur) {
     const connexion = descriptionConnexion();
     console.error(`[sante] Base de données indisponible (${connexion}) :`, erreur.code ?? '', erreur.message);
@@ -25,6 +28,9 @@ export async function GET() {
         ok: false,
         base: 'erreur',
         code: erreur.code ?? erreur.name ?? 'inconnu',
+        ...(erreur.code === 'ER_NO_SUCH_TABLE'
+          ? { conseil: `Table manquante (${erreur.sqlMessage ?? ''}) : lancez « npm run db:init » sans --ecraser.` }
+          : {}),
         connexion,
         ...(erreur.address ? { adresseEssayee: `${erreur.address}${erreur.port ? `:${erreur.port}` : ''}` } : {}),
         variables,

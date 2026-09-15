@@ -47,7 +47,7 @@ try {
   } else {
     if (ecraser) {
       await connexion.query('SET FOREIGN_KEY_CHECKS = 0');
-      for (const t of ['fr_renvois', 'fr_termes', 'locutions', 'synonymes', 'sens', 'formes', 'quotidien', 'entrees']) {
+      for (const t of ['fr_renvois', 'fr_termes', 'locutions', 'exemples', 'synonymes', 'sens', 'formes', 'quotidien', 'entrees']) {
         await connexion.query(`TRUNCATE TABLE ${t}`);
       }
       await connexion.query('SET FOREIGN_KEY_CHECKS = 1');

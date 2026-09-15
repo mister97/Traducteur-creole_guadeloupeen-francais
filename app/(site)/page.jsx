@@ -106,7 +106,14 @@ function MotDuJour({ mot, jour, langue, t }) {
         {sens.map((s) => (
           <li key={s.num}>
             <span className="sens-num">{s.num}</span>
-            <span>{s.traduction}</span>
+            <span>
+              {s.traduction}
+              {s.exemples[0] && (
+                <span className="mot-du-jour__exemple" lang="gcf">
+                  « {s.exemples[0].kr} »{s.exemples[0].fr && <span lang="fr"> – {s.exemples[0].fr}</span>}
+                </span>
+              )}
+            </span>
           </li>
         ))}
       </ol>

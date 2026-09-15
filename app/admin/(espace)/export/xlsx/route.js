@@ -32,6 +32,7 @@ export async function GET() {
     { header: 'Autres graphies', key: 'variantes', width: 22 },
     { header: 'N°', key: 'num', width: 5 },
     { header: 'Traduction', key: 'traduction', width: 60 },
+    { header: 'Exemples', key: 'exemples', width: 50 },
     { header: 'Synonymes', key: 'synonymes', width: 30 },
     { header: 'Termes français', key: 'termes', width: 30 },
     { header: 'Adresse', key: 'slug', width: 20 },
@@ -48,7 +49,14 @@ export async function GET() {
     const base = { id: e.id, mot: e.mot, variantes: e.variantes.join(', '), slug: e.slug };
     if (!e.sens.length) mots.addRow(base);
     for (const s of e.sens) {
-      mots.addRow({ ...base, num: s.num, traduction: s.traduction, synonymes: s.synonymes.join(', '), termes: s.termes.join(', ') });
+      mots.addRow({
+        ...base,
+        num: s.num,
+        traduction: s.traduction,
+        exemples: s.exemples.map((ex) => (ex.fr ? `${ex.kr} → ${ex.fr}` : ex.kr)).join(' | '),
+        synonymes: s.synonymes.join(', '),
+        termes: s.termes.join(', '),
+      });
     }
     for (const l of e.locutions) expressions.addRow({ mot: e.mot, ...l });
   }
