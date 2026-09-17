@@ -12,15 +12,15 @@ const LONGUEUR = 5;
 const ESSAIS_MAX = 6;
 const CLE_STATS = 'mofwaze-jeu-stats';
 const CLE_REGLES = 'mofwaze-jeu-regles-vues';
-// Disposition du clavier guadeloupéen (iPhone) : pas de Q ni de X, K à la place du Q.
-// Ò, É et È tapent O et E, puisque les accents ne comptent pas dans le jeu.
+// Disposition du clavier guadeloupéen : pas de Q ni de X (K à la place du Q),
+// et pas de touches accentuées puisque les accents ne comptent pas dans le jeu.
 const CLAVIER = [
   ['A', 'Z', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
   ['K', 'S', 'D', 'F', 'G', 'H', 'J', 'L', 'M'],
-  ['ENTREE', 'W', 'Ò', 'C', 'V', 'B', 'N', 'É', 'È', 'EFFACER'],
+  ['ENTREE', 'W', 'C', 'V', 'B', 'N', 'EFFACER'],
 ];
-// Lettres acceptées, y compris depuis un clavier d'ordinateur
-const LETTRES = new Set(CLAVIER.flat().filter((cle) => cle.length === 1).map(lettresJeu));
+// Lettres acceptées, y compris depuis un clavier d'ordinateur (é → E, q et x ignorés)
+const LETTRES = new Set(CLAVIER.flat().filter((cle) => cle.length === 1));
 const PRIORITE = { absent: 1, place: 2, bon: 3 };
 const EMOJI = { bon: '🟩', place: '🟧', absent: '⬜' };
 const STATS_VIDES = { joues: 0, gagnes: 0, serie: 0, meilleure: 0, distribution: [0, 0, 0, 0, 0, 0], dernierJour: null, dernierGagne: null };
@@ -324,7 +324,7 @@ export default function Jeu({ jour, dateTexte, numero, finDuJour, urlSite, t }) 
                 <button
                   key={cle}
                   type="button"
-                  className={`${styles.touche} ${cle.length > 1 ? styles.large : ''} ${cle.length === 1 && etatsClavier[lettresJeu(cle)] ? styles[etatsClavier[lettresJeu(cle)]] : ''}`}
+                  className={`${styles.touche} ${cle.length > 1 ? styles.large : ''} ${etatsClavier[cle] ? styles[etatsClavier[cle]] : ''}`}
                   onClick={() => touche(cle)}
                   disabled={enAttente && cle === 'ENTREE'}
                   aria-label={cle === 'EFFACER' ? t.effacer : cle === 'ENTREE' ? t.entree : cle}
