@@ -80,7 +80,7 @@ export default async function TableauDeBord() {
           <dl className="meta">
             <dt>Mot du jour</dt>
             <dd>{motDuJour ? <Link className="lien" href={`/admin/mots/${motDuJour.id}`}>{motDuJour.mot}</Link> : '—'}</dd>
-            <dt>Mo kaché</dt>
+            <dt>Mokaché</dt>
             <dd>{motJeu ? <Link className="lien" href={`/admin/mots/${motJeu.id}`}>{motJeu.mot}</Link> : '—'}</dd>
           </dl>
           <p style={{ marginTop: 14 }}>

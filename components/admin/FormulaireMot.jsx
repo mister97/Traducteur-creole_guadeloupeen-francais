@@ -49,7 +49,7 @@ export default function FormulaireMot({ entree }) {
             </label>
             <label className="case">
               <input type="checkbox" name="exclu_jeu" defaultChecked={Boolean(entree?.exclu_jeu)} />
-              Exclure du jeu Mo kaché
+              Exclure du jeu Mokaché
             </label>
           </div>
         </div>

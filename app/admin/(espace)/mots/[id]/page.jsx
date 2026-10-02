@@ -68,7 +68,7 @@ export default async function PageMot({ params, searchParams }) {
               <ul style={{ margin: 0, paddingLeft: 18 }}>
                 {tirages.map((x) => (
                   <li key={`${x.jour}-${x.type}`}>
-                    {x.jour} · {x.type === 'jeu' ? 'Mo kaché' : 'mot du jour'}
+                    {x.jour} · {x.type === 'jeu' ? 'Mokaché' : 'mot du jour'}
                   </li>
                 ))}
               </ul>

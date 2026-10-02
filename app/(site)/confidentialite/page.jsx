@@ -94,7 +94,7 @@ export default async function Confidentialite() {
         </table>
       </div>
       <p>
-        Les recherches et les essais du jeu Mo kaché sont traités par le serveur pour vous répondre, sans être enregistrés en base de
+        Les recherches et les essais du jeu Mokaché sont traités par le serveur pour vous répondre, sans être enregistrés en base de
         données.
       </p>
 
@@ -127,7 +127,7 @@ export default async function Confidentialite() {
               <td>
                 Stockage local <code>mofwaze-jeu-…</code>
               </td>
-              <td>Vos parties et statistiques de Mo kaché : elles restent sur votre appareil et ne nous sont pas envoyées</td>
+              <td>Vos parties et statistiques de Mokaché : elles restent sur votre appareil et ne nous sont pas envoyées</td>
               <td>Jusqu’à ce que vous effaciez les données du site</td>
             </tr>
             <tr>

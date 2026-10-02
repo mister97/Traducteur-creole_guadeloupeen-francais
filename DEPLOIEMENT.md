@@ -99,7 +99,7 @@ Commencez par ouvrir **`/api/sante`** : elle doit afficher `"ok": true` et le no
 - l'accueil affiche le mot du jour ;
 - la recherche fonctionne dans les deux sens ;
 - une fiche de mot s'ouvre ;
-- une partie de Mo kaché se joue ;
+- une partie de Mokaché se joue ;
 - une suggestion envoyée arrive par mail ;
 - elle apparaît dans `/admin` et peut être validée.
 

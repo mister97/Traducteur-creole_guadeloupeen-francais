@@ -48,7 +48,7 @@ export default async function PageQuotidien() {
 
   return (
     <>
-      <h1 className="admin__titre">Mot du jour & Mo kaché</h1>
+      <h1 className="admin__titre">Mot du jour & Mokaché</h1>
       <p className="admin__sous-titre">
         Chaque jour à minuit (heure de Guadeloupe), un mot est tiré au sort pour l’accueil et un mot de 5 lettres pour le jeu. Vous pouvez
         en programmer à l’avance, ou exclure un mot depuis sa fiche.
@@ -67,7 +67,7 @@ export default async function PageQuotidien() {
                     <tr>
                       <th>Jour</th>
                       <th>Mot du jour</th>
-                      <th>Mo kaché</th>
+                      <th>Mokaché</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -94,7 +94,7 @@ export default async function PageQuotidien() {
                   <tr>
                     <th>Jour</th>
                     <th>Mot du jour</th>
-                    <th>Mo kaché</th>
+                    <th>Mokaché</th>
                   </tr>
                 </thead>
                 <tbody>

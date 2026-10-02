@@ -17,7 +17,7 @@ export default function FormulairePlanification({ jourParDefaut }) {
         <label htmlFor="type">Pour</label>
         <select id="type" name="type" className="saisie">
           <option value="mot">Mot du jour</option>
-          <option value="jeu">Mo kaché (5 lettres)</option>
+          <option value="jeu">Mokaché (5 lettres)</option>
         </select>
       </div>
       <div className="champ">

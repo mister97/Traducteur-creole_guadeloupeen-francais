@@ -181,7 +181,7 @@ export async function planifierMot(_etat, formData) {
     return { erreur: `« ${entree.mot} » ne convient pas au jeu : il faut un seul mot de 5 lettres.` };
   }
   await planifier(jour, type, entree.id);
-  return { ok: `${entree.mot} programmé le ${jour} (${type === 'jeu' ? 'Mo kaché' : 'mot du jour'}).` };
+  return { ok: `${entree.mot} programmé le ${jour} (${type === 'jeu' ? 'Mokaché' : 'mot du jour'}).` };
 }
 
 export async function nouveauTirage(formData) {

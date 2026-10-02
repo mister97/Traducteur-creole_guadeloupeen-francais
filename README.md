@@ -4,7 +4,7 @@ Dictionnaire créole guadeloupéen ↔ français : https://mofwazajkreyolgwadlou
 
 - recherche créole → français et français → créole, avec autocomplétion ;
 - une page par mot (`/mo/manje`) et par terme français (`/fr/manger`) ;
-- mot du jour sur l'accueil et jeu quotidien **Mo kaché** (façon Wordle, 5 lettres) ;
+- mot du jour sur l'accueil et jeu quotidien **Mokaché** (façon Wordle, 5 lettres) ;
 - formulaire de suggestion (nouveau mot, correction d'une fiche, remarque) ;
 - espace d'administration : validation des suggestions, édition du dictionnaire, termes français, programmation du mot du jour, export Excel/JSON ;
 - interface en kréyòl et en français.
