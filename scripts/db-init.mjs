@@ -5,7 +5,7 @@
 //                                (les suggestions sont conservées)
 // La connexion est lue dans .env.local / .env ou dans l'environnement (voir .env.example).
 
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -35,11 +35,48 @@ function lireDonnees() {
   throw new Error('database/donnees.sql introuvable : lancez d’abord « npm run db:generer ».');
 }
 
+// Applique les fichiers de database/migrations/ qui ne l'ont pas encore été.
+// Le schéma crée les tables manquantes ; les migrations gèrent les évolutions
+// (nouvelles colonnes notamment), chacune n'étant jouée qu'une fois.
+async function appliquerMigrations(connexion) {
+  await connexion.query(
+    `CREATE TABLE IF NOT EXISTS migrations (
+       nom VARCHAR(190) NOT NULL PRIMARY KEY,
+       applique_le DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci`,
+  );
+  const dossier = path.join(racine, 'database', 'migrations');
+  if (!existsSync(dossier)) return;
+  const [faites] = await connexion.query('SELECT nom FROM migrations');
+  const deja = new Set(faites.map((f) => f.nom));
+  const fichiers = readdirSync(dossier)
+    .filter((f) => f.endsWith('.sql'))
+    .sort();
+  // Sur une base neuve, schema.sql contient déjà le résultat des migrations :
+  // on ignore alors « existe déjà » au lieu d'échouer.
+  const DEJA_EN_PLACE = ['ER_DUP_FIELDNAME', 'ER_TABLE_EXISTS_ERROR', 'ER_DUP_KEYNAME', 'ER_DUP_ENTRY'];
+  for (const fichier of fichiers) {
+    if (deja.has(fichier)) continue;
+    let ignorees = 0;
+    for (const i of instructions(readFileSync(path.join(dossier, fichier), 'utf8'))) {
+      try {
+        await connexion.query(i);
+      } catch (erreur) {
+        if (!DEJA_EN_PLACE.includes(erreur.code)) throw erreur;
+        ignorees++;
+      }
+    }
+    await connexion.query('INSERT INTO migrations (nom) VALUES (?)', [fichier]);
+    console.log(`Migration appliquée : ${fichier}${ignorees ? ` (${ignorees} instruction(s) déjà en place)` : ''}`);
+  }
+}
+
 const connexion = await mysql.createConnection(configConnexion());
 try {
   const schema = readFileSync(path.join(racine, 'database', 'schema.sql'), 'utf8');
   for (const i of instructions(schema)) await connexion.query(i);
   console.log('Tables prêtes.');
+  await appliquerMigrations(connexion);
 
   const [[{ n }]] = await connexion.query('SELECT COUNT(*) AS n FROM entrees');
   if (n > 0 && !ecraser) {

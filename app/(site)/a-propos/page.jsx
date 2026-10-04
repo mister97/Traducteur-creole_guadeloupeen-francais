@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { IconeCrayon } from '@/components/Icones';
 import { textes } from '@/lib/langue';
-import { CONTACT_EMAIL } from '@/lib/site';
+import { CONTACT_FORMULAIRE } from '@/lib/site';
 
 export async function generateMetadata() {
   const { t } = await textes();
@@ -40,9 +40,9 @@ export default async function PageAPropos() {
 
       <h2>{a.contactTitre}</h2>
       <p>
-        <a className="lien" href={`mailto:${CONTACT_EMAIL}`}>
-          {CONTACT_EMAIL}
-        </a>
+        <Link className="lien" href={CONTACT_FORMULAIRE}>
+          {t.pied.contactFormulaire}
+        </Link>
       </p>
     </div>
   );

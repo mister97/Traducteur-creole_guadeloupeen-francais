@@ -32,6 +32,10 @@ export async function envoyerSuggestion(_etatPrecedent, formData) {
   let entreeId = null;
   let mot = null;
 
+  // Sans consentement du contributeur, le projet ne pourrait pas rediffuser son apport sous sa licence
+  const consentement = formData.get('consentement') === 'on';
+  if (type !== 'remarque' && !consentement) return { erreur: 'erreurConsentement' };
+
   if (type !== 'remarque') {
     const brut = champ('donnees');
     if (brut.length > 60000) return { erreur: 'erreurTechnique' };
@@ -71,6 +75,7 @@ export async function envoyerSuggestion(_etatPrecedent, formData) {
       notifier: notifier && Boolean(email),
       langue: await langueCourante(),
       ip_hash: ipHash,
+      consent_license: consentement,
     };
     const id = await creerSuggestion(suggestion);
     await purgerDonneesPersonnelles().catch((erreur) => console.error('Purge des données personnelles :', erreur.message));

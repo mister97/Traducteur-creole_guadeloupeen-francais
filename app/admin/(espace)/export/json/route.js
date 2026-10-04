@@ -8,7 +8,7 @@ export async function GET() {
   return new Response(JSON.stringify({ exporte_le: new Date().toISOString(), total: entrees.length, entrees }, null, 1), {
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
-      'Content-Disposition': `attachment; filename="mofwaze-${jourGuadeloupe()}.json"`,
+      'Content-Disposition': `attachment; filename="chalviraj-${jourGuadeloupe()}.json"`,
       'Cache-Control': 'no-store',
     },
   });

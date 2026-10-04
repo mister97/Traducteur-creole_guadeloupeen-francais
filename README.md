@@ -1,13 +1,14 @@
-# Mofwazé – Kréyòl Gwadloupéyen ↔ Fransé
+# Chalviraj – Kréyòl Gwadloupéyen ↔ Fransé
 
-Dictionnaire créole guadeloupéen ↔ français : https://mofwazajkreyolgwadloupeyen.fr
+Dictionnaire créole guadeloupéen ↔ français : https://chalviraj.com
 
 - recherche créole → français et français → créole, avec autocomplétion ;
 - une page par mot (`/mo/manje`) et par terme français (`/fr/manger`) ;
 - mot du jour sur l'accueil et jeu quotidien **Mokaché** (façon Wordle, 5 lettres) ;
 - formulaire de suggestion (nouveau mot, correction d'une fiche, remarque) ;
 - espace d'administration : validation des suggestions, édition du dictionnaire, termes français, programmation du mot du jour, export Excel/JSON ;
-- interface en kréyòl et en français.
+- interface en kréyòl et en français ;
+- **API publique en lecture** (`/api/v1/`) et **espace partenaire** (`/partenaire`) : clés, quotas, journal d'usage, acceptation des conditions.
 
 Next.js 16 (App Router, `.jsx`), MySQL 8 ou MariaDB 10.6+, envoi de mails par SMTP (OVH).
 
@@ -64,7 +65,40 @@ Scripts :
 
 - `npm run db:generer` : régénère `database/donnees.sql(.gz)` depuis `database/dico-kreyol.sqlite` (import initial uniquement) ;
 - `npm run db:init` : crée les tables et importe les données si le dictionnaire est vide (`-- --ecraser` pour tout réimporter, suggestions conservées) ;
-- `npm run admin:hash -- "mot de passe"` : produit `ADMIN_PASSWORD_HASH` et un `SESSION_SECRET`.
+- `npm run admin:hash -- "mot de passe"` : produit `ADMIN_PASSWORD_HASH` et un `SESSION_SECRET` ;
+- `npm run api:agreger` : agrège l'usage de l'API et purge le journal (tâche quotidienne).
+
+`db:init` applique aussi les fichiers de `database/migrations/` qui ne l'ont pas encore été, et garde la liste dans une table `migrations`.
+
+## API et partenaires
+
+| Page | Rôle |
+| --- | --- |
+| `/api` | Documentation publique, quotas, conditions, formulaire de demande d'accès |
+| `/api/conditions` | Conditions d'utilisation de l'API (texte dans `content/conditions-api.md`, version dans `TERMS_VERSION`) |
+| `/api/v1/search`, `/api/v1/words/{id}`, `/api/v1/updates`, `/api/v1/health` | Points d'entrée JSON, en lecture seule |
+| `/api/v1/export` | Dictionnaire entier, réservé aux partenaires autorisés depuis l'admin (2 appels par heure) |
+| `/partenaire` | Espace du partenaire : conditions, clés, usage des 30 derniers jours |
+| `/admin/partenaires` | Demandes d'accès, création des comptes, suspension |
+
+Sans clé, l'API accepte 10 requêtes par minute et par IP ; avec une clé, la valeur de `api_keys.rate_limit` (60 par défaut). Chaque réponse contient le bloc `license` et les en-têtes `X-License` et `Link: rel="license"`.
+
+Une tâche quotidienne agrège le journal des appels et le purge au-delà de 30 jours :
+
+```bash
+npm run api:agreger
+```
+
+Elle est aussi déclenchée au fil de l'eau (au plus une fois par heure) si aucune tâche planifiée n'est configurée.
+
+## Licence
+
+Deux licences, à ne pas confondre :
+
+- **Le code** du site est sous licence MIT : voir [`LICENSE`](LICENSE).
+- **Les données** du dictionnaire (entrées, traductions, exemples, catégories grammaticales) sont sous licence CC BY-NC-SA 4.0 : voir [`LICENSE-DATA.md`](LICENSE-DATA.md).
+
+Autrement dit : le code est réutilisable librement, tandis que les données imposent de citer le projet, d'en rester à un usage non commercial sauf accord écrit, et de republier tout enrichissement sous la même licence. La page [`/licence`](https://chalviraj.com/licence) explique ces règles en français courant.
 
 ## Mise en production
 

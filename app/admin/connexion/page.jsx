@@ -13,7 +13,7 @@ export default async function PageConnexion() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/img/logo-header.png" alt="" />
           <span>
-            Mofwazé
+            Chalviraj
             <small style={{ color: 'var(--turquoise-fonce)' }}>Administration</small>
           </span>
         </div>

@@ -1,6 +1,6 @@
 # Déploiement sur le VPS Plesk
 
-Ce guide met en ligne Mofwazé sur le VPS (Plesk), avec la base MySQL/MariaDB de Plesk et les mails OVH, puis bascule le domaine depuis GitHub Pages.
+Ce guide met en ligne Chalviraj sur le VPS (Plesk), avec la base MySQL/MariaDB de Plesk et les mails OVH, puis bascule le domaine depuis GitHub Pages.
 
 L'ancien site reste en ligne sur GitHub Pages jusqu'à l'étape 7. Ne fusionnez pas cette branche dans `main` avant, sinon GitHub Pages publierait le code source à la place du site.
 
@@ -18,8 +18,8 @@ L'ancien site reste en ligne sur GitHub Pages jusqu'à l'étape 7. Ne fusionnez 
 ## 2. Base de données
 
 1. **Créer la base :** Sites Web & Domaines › *domaine* › **Bases de données** › **Ajouter une base de données**.
-   - Base : `mofwaze` (MariaDB ou MySQL).
-   - Utilisateur : `mofwaze`, avec un mot de passe fort. Notez-le.
+   - Base : `chalviraj` (MariaDB ou MySQL).
+   - Utilisateur : `chalviraj`, avec un mot de passe fort. Notez-le.
 2. **Importer les données**, au choix :
    - **phpMyAdmin** (depuis la page de la base) : onglet *Importer*, fichier `database/schema.sql`, puis fichier `database/donnees.sql.gz`. Si le `.gz` n'existe pas sur votre poste, générez-le avec `npm run db:generer`.
    - **Terminal SSH**, une fois l'application en place (étape 4) : `npm run db:init` depuis le dossier de l'application, avec les variables `DB_*` définies.
@@ -61,20 +61,21 @@ Ajoutez ensuite les **variables d'environnement** (bouton *Variables d'environne
 | --- | --- |
 | `DB_HOST` | `localhost` |
 | `DB_PORT` | `3306` |
-| `DB_USER` | `mofwaze` |
+| `DB_USER` | `chalviraj` |
 | `DB_PASSWORD` | le mot de passe de l'étape 2 |
-| `DB_NAME` | `mofwaze` |
+| `DB_NAME` | `chalviraj` |
 | `DB_SOCKET` | *facultatif* : `/var/run/mysqld/mysqld.sock` pour se connecter par socket local (remplace `DB_HOST`/`DB_PORT`) si l'utilisateur MySQL n'accepte que « localhost » |
-| `SITE_URL` | `https://mofwazajkreyolgwadloupeyen.fr` |
-| `CONTACT_EMAIL` | `kontakt@mofwazajkreyolgwadloupeyen.fr` |
+| `SITE_URL` | `https://chalviraj.com` |
+| `CONTACT_EMAIL` | `kontakt@chalviraj.com` |
 | `ADMIN_PASSWORD_HASH` | résultat de `npm run admin:hash -- "votre mot de passe"` (à lancer sur votre poste) |
 | `SESSION_SECRET` | également fourni par `admin:hash` (32 caractères minimum) |
 | `SMTP_HOST` | `ssl0.ovh.net` |
 | `SMTP_PORT` | `465` |
-| `SMTP_USER` | `kontakt@mofwazajkreyolgwadloupeyen.fr` (adresse complète) |
+| `SMTP_USER` | `kontakt@chalviraj.com` (adresse complète) |
 | `SMTP_PASS` | mot de passe de la boîte mail OVH |
-| `MAIL_FROM` | `Mofwazé <kontakt@mofwazajkreyolgwadloupeyen.fr>` |
-| `ADMIN_EMAIL` | adresse qui reçoit les nouvelles suggestions |
+| `MAIL_FROM` | `Chalviraj <kontakt@chalviraj.com>` |
+| `ADMIN_EMAIL` | adresse qui reçoit les nouvelles suggestions et les demandes d'accès à l'API |
+| `API_QUOTA_BASE` | *facultatif* : `1` pour décompter les quotas d'API en base, utile seulement si plusieurs instances Node tournent |
 
 Ensuite :
 
@@ -89,8 +90,8 @@ Les variables `DB_*` doivent être définies avant de lancer `db:init` (étape 2
 
 Tant que le domaine pointe vers GitHub Pages, testez avec l'une de ces méthodes :
 
-- **Sous-domaine temporaire :** créez par exemple `beta.mofwazajkreyolgwadloupeyen.fr` dans Plesk, avec la même application Node, et un enregistrement DNS `A` chez OVH vers l'IP du VPS.
-- **Fichier `hosts` de votre ordinateur :** ajoutez `IP_DU_VPS mofwazajkreyolgwadloupeyen.fr`, testez, puis retirez la ligne.
+- **Sous-domaine temporaire :** créez par exemple `beta.chalviraj.com` dans Plesk, avec la même application Node, et un enregistrement DNS `A` chez OVH vers l'IP du VPS.
+- **Fichier `hosts` de votre ordinateur :** ajoutez `IP_DU_VPS chalviraj.com`, testez, puis retirez la ligne.
 
 Commencez par ouvrir **`/api/sante`** : elle doit afficher `"ok": true` et le nombre de mots. Sinon, elle donne le code d'erreur MySQL (voir *Dépannage*) et indique quelles variables d'environnement sont définies.
 
@@ -101,7 +102,20 @@ Commencez par ouvrir **`/api/sante`** : elle doit afficher `"ok": true` et le no
 - une fiche de mot s'ouvre ;
 - une partie de Mokaché se joue ;
 - une suggestion envoyée arrive par mail ;
-- elle apparaît dans `/admin` et peut être validée.
+- elle apparaît dans `/admin` et peut être validée ;
+- `/api/v1/health` répond, et `/api/v1/search?q=kaz` renvoie du JSON avec le bloc `license` ;
+- la page `/api` s'affiche et le formulaire de demande d'accès envoie bien un mail.
+
+## 5 bis. Ancien domaine
+
+Le site change de nom : l'adresse historique `mofwazajkreyolgwadloupeyen.fr` doit renvoyer vers `chalviraj.com`, sinon les visiteurs et le référencement acquis sont perdus.
+
+1. Gardez le domaine `mofwazajkreyolgwadloupeyen.fr` actif chez OVH.
+2. Dans Plesk, ajoutez-le comme **alias de domaine** de `chalviraj.com` (Sites Web & Domaines › Ajouter un alias de domaine), en cochant la redirection, ou créez un domaine qui redirige en **301** vers `https://chalviraj.com`.
+3. Faites pointer ses enregistrements DNS vers le VPS, comme pour le nouveau domaine.
+4. Demandez un certificat Let's Encrypt pour l'ancien domaine aussi, pour que la redirection fonctionne en HTTPS.
+
+La redirection doit être permanente (301) : c'est elle qui transmet le référencement à la nouvelle adresse.
 
 ## 6. HTTPS
 
@@ -109,7 +123,7 @@ Une fois le DNS en place (étape 7) : Sites Web & Domaines › *domaine* › **S
 
 ## 7. Bascule du domaine
 
-1. **Chez OVH :** Domaines › *mofwazajkreyolgwadloupeyen.fr* › **Zone DNS**.
+1. **Chez OVH :** Domaines › *chalviraj.com* › **Zone DNS**.
    - Remplacez les enregistrements `A`/`AAAA` qui pointent vers GitHub (`185.199.108–111.153`) par l'IP du VPS.
    - Faites de même pour `www` (`CNAME` vers le domaine, ou `A` vers le VPS).
    - **Ne touchez pas aux enregistrements `MX`** : les mails restent chez OVH.
@@ -133,9 +147,24 @@ Le dictionnaire lui-même se modifie dans `/admin` : aucune mise en ligne n'est 
 
 `/api/sante` indique `ER_NO_SUCH_TABLE` avec un conseil si une migration a été oubliée.
 
+Depuis octobre 2026, `db:init` tient la liste des migrations déjà appliquées dans une table `migrations` : la commande est sans danger, elle ne rejoue rien deux fois.
+
 | Migration | Contenu |
 | --- | --- |
 | `2026-09-15-exemples-par-sens.sql` | Table `exemples` : exemples rattachés à chaque sens |
+| `2026-10-04-licence-consentement.sql` | Consentement du contributeur à la licence (`suggestions.consent_license`) |
+| `2026-10-05-api-partenaires.sql` | API publique et espace partenaire : `partners`, `api_keys`, `api_requests`, `api_usage_daily`, `access_requests`, `auth_tokens`, `terms_acceptances` |
+| `2026-10-06-export-complet.sql` | Autorisation d'export complet par partenaire (`partners.export_autorise`) |
+
+## Tâche planifiée : usage de l'API
+
+Le journal des appels (`api_requests`) est agrégé chaque jour dans `api_usage_daily`, puis purgé au-delà de 30 jours. Dans Plesk : **Outils & Paramètres › Tâches planifiées › Ajouter une tâche**, une fois par jour (par exemple à 4 h) :
+
+```bash
+cd /var/www/vhosts/VOTRE_DOMAINE/httpdocs && /opt/plesk/node/22/bin/npm run api:agreger
+```
+
+Sans cette tâche, l'agrégation se fait quand même au fil des appels (au plus une fois par heure), mais la tâche planifiée est plus régulière.
 
 ## Sauvegardes
 

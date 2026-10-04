@@ -2,7 +2,6 @@ import FormulaireSuggestion from '@/components/FormulaireSuggestion';
 import { premiere } from '@/lib/db';
 import { chargerFiche } from '@/lib/fiches';
 import { textes } from '@/lib/langue';
-import { CONTACT_EMAIL } from '@/lib/site';
 
 export async function generateMetadata() {
   const { t } = await textes();
@@ -35,7 +34,6 @@ export default async function PageProposer({ searchParams }) {
           entree={entree}
           typeInitial={typeInitial}
           debut={Date.now()}
-          email={CONTACT_EMAIL}
         />
       </div>
     </div>

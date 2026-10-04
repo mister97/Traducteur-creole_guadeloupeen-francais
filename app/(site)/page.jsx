@@ -6,7 +6,8 @@ import { formaterJour, jourGuadeloupe, numeroJeu } from '@/lib/dates';
 import { ficheParId, lettresDisponibles, statistiques } from '@/lib/dico';
 import { textes } from '@/lib/langue';
 import { tirage } from '@/lib/quotidien';
-import { CONTACT_EMAIL } from '@/lib/site';
+import { LICENCE, PAGE_LICENCE } from '@/lib/licence';
+import { CONTACT_FORMULAIRE, SITE_URL } from '@/lib/site';
 import { f, formaterNombre } from '@/lib/textes';
 
 export default async function Accueil() {
@@ -16,8 +17,31 @@ export default async function Accueil() {
   const motDuJour = idMotDuJour ? await ficheParId(idMotDuJour) : null;
   const lettresPresentes = new Set(lettres.map((l) => l.lettre));
 
+  // Balisage lisible par les moteurs et les agrégateurs : la licence des données y figure
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'Chalviraj Kréyòl Gwadloupéyen',
+    description:
+      'Dictionnaire créole guadeloupéen ↔ français : entrées, variantes orthographiques, sens, synonymes, exemples et index français.',
+    url: SITE_URL,
+    inLanguage: ['gcf', 'fr'],
+    license: LICENCE.resume,
+    usageInfo: PAGE_LICENCE,
+    isAccessibleForFree: true,
+    creator: { '@type': 'Organization', name: 'Chalviraj Kréyòl Gwadloupéyen', url: SITE_URL },
+    creditText: LICENCE.attribution,
+    keywords: ['créole guadeloupéen', 'kréyòl gwadloupéyen', 'dictionnaire', 'français', 'traduction'],
+    variableMeasured: ['mot créole', 'traduction française', 'synonymes', 'exemples'],
+    size: `${stats.mots} entrées`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+      />
       <section className="hero">
         <div className="hero__deco" aria-hidden="true" />
         <div className="conteneur">
@@ -79,9 +103,9 @@ export default async function Accueil() {
             <Link href="/proposer" className="bouton bouton--corail">
               <IconeCrayon taille={18} /> {t.accueil.contribuerBouton}
             </Link>
-            <a className="bandeau__email" href={`mailto:${CONTACT_EMAIL}`}>
-              {CONTACT_EMAIL}
-            </a>
+            <Link className="bandeau__email" href={CONTACT_FORMULAIRE}>
+              {t.pied.contactFormulaire}
+            </Link>
           </div>
         </section>
       </div>

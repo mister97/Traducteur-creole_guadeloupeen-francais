@@ -9,17 +9,19 @@ const LIENS = [
   { href: '/admin/mots', libelle: 'Mots' },
   { href: '/admin/francais', libelle: 'Termes français' },
   { href: '/admin/quotidien', libelle: 'Mot du jour & jeu' },
+  { href: '/admin/partenaires', libelle: 'Partenaires', badgeDemandes: true },
   { href: '/admin/export', libelle: 'Export' },
 ];
 
-export default function NavAdmin({ enAttente }) {
+export default function NavAdmin({ enAttente, demandesEnAttente }) {
   const chemin = usePathname();
   return LIENS.map((l) => {
     const actif = l.exact ? chemin === l.href : chemin.startsWith(l.href);
+    const compte = (l.badge && enAttente) || (l.badgeDemandes && demandesEnAttente) || 0;
     return (
       <Link key={l.href} href={l.href} className="admin__lien" aria-current={actif ? 'page' : undefined}>
         {l.libelle}
-        {l.badge && enAttente > 0 && <span className="admin__badge">{enAttente}</span>}
+        {compte > 0 && <span className="admin__badge">{compte}</span>}
       </Link>
     );
   });

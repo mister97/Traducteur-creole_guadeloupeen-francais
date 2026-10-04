@@ -1,0 +1,28 @@
+# ai.txt — Chalviraj Kréyòl Gwadloupéyen
+# https://chalviraj.com
+
+Les données de ce dictionnaire (entrées, traductions, exemples, catégories
+grammaticales) sont publiées sous licence Creative Commons Attribution -
+Pas d'Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0
+International (CC BY-NC-SA 4.0).
+
+https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr
+https://chalviraj.com/licence
+
+INTERDICTION : la collecte de ces données en vue de l'entraînement, du
+réglage fin ou de l'évaluation de modèles d'intelligence artificielle
+exploités commercialement n'est pas autorisée. Elle constitue un usage
+commercial au sens de la licence, et requiert un accord écrit préalable.
+
+Cette interdiction vise notamment, sans s'y limiter : GPTBot, ChatGPT-User,
+OAI-SearchBot, CCBot, ClaudeBot, Claude-Web, anthropic-ai, Google-Extended,
+PerplexityBot, Bytespider, Applebot-Extended, Meta-ExternalAgent,
+FacebookBot, Amazonbot, cohere-ai, Diffbot, Omgilibot, ImagesiftBot.
+
+Un usage non commercial (recherche, enseignement, projet associatif) est
+bienvenu, à condition de citer la source :
+
+Chalviraj Kréyòl Gwadloupéyen — https://chalviraj.com — CC BY-NC-SA 4.0
+
+Demande de dérogation ou d'accès à l'API :
+https://chalviraj.com/api

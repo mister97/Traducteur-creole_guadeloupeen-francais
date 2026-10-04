@@ -1,7 +1,7 @@
 export default function manifest() {
   return {
-    name: 'Mofwazé – Kréyòl Gwadloupéyen ↔ Fransé',
-    short_name: 'Mofwazé',
+    name: 'Chalviraj – Kréyòl Gwadloupéyen ↔ Fransé',
+    short_name: 'Chalviraj',
     start_url: '/',
     display: 'standalone',
     background_color: '#fff8e6',

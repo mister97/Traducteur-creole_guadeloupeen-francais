@@ -3,7 +3,7 @@ import ValeurLegale from '@/components/ValeurLegale';
 import { formaterJour } from '@/lib/dates';
 import { textes } from '@/lib/langue';
 import { CONSERVATION, MENTIONS } from '@/lib/mentions';
-import { CONTACT_EMAIL } from '@/lib/site';
+import { CONTACT_FORMULAIRE } from '@/lib/site';
 
 export const metadata = {
   title: 'Politique de confidentialité',
@@ -14,9 +14,9 @@ export default async function Confidentialite() {
   const { t } = await textes();
   const { editeur, hebergeur } = MENTIONS;
   const contact = (
-    <a className="lien" href={`mailto:${CONTACT_EMAIL}`}>
-      {CONTACT_EMAIL}
-    </a>
+    <Link className="lien" href={CONTACT_FORMULAIRE}>
+      le formulaire de contact
+    </Link>
   );
 
   return (
@@ -32,7 +32,7 @@ export default async function Confidentialite() {
       </header>
 
       <p>
-        Mofwazé ne fait ni publicité, ni mesure d’audience, et n’utilise aucun traceur tiers. Cette page explique quelles données sont
+        Chalviraj ne fait ni publicité, ni mesure d’audience, et n’utilise aucun traceur tiers. Cette page explique quelles données sont
         traitées quand vous utilisez le site, pourquoi, et comment exercer vos droits.
       </p>
 
@@ -84,8 +84,8 @@ export default async function Confidentialite() {
               <td>Effacée automatiquement après {CONSERVATION.empreinteIpJours} jours</td>
             </tr>
             <tr>
-              <td>Message envoyé à {CONTACT_EMAIL}</td>
-              <td>Votre adresse e-mail et le contenu du message</td>
+              <td>Message envoyé par le formulaire de contact</td>
+              <td>Votre message, et votre adresse e-mail si vous l’indiquez</td>
               <td>Vous répondre</td>
               <td>Intérêt légitime</td>
               <td>3 ans maximum après le dernier échange</td>
@@ -118,21 +118,21 @@ export default async function Confidentialite() {
             </tr>
             <tr>
               <td>
-                Cookie <code>mofwaze_admin</code>
+                Cookie <code>chalviraj_admin</code>
               </td>
               <td>Session de l’espace d’administration (administrateurs uniquement)</td>
               <td>7 jours</td>
             </tr>
             <tr>
               <td>
-                Stockage local <code>mofwaze-jeu-…</code>
+                Stockage local <code>chalviraj-jeu-…</code>
               </td>
               <td>Vos parties et statistiques de Mokaché : elles restent sur votre appareil et ne nous sont pas envoyées</td>
               <td>Jusqu’à ce que vous effaciez les données du site</td>
             </tr>
             <tr>
               <td>
-                Stockage local <code>mofwaze-direction</code>
+                Stockage local <code>chalviraj-direction</code>
               </td>
               <td>Dernier sens de recherche utilisé (créole → français ou l’inverse)</td>
               <td>Jusqu’à ce que vous effaciez les données du site</td>

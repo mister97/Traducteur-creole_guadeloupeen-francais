@@ -55,7 +55,7 @@ export default async function PageMot({ params }) {
     inLanguage: 'gcf',
     description: fiche.sens.map((s) => s.traduction).join(' ; '),
     url: `${SITE_URL}/mo/${fiche.slug}`,
-    inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'Mofwazé', url: SITE_URL },
+    inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'Chalviraj', url: SITE_URL },
   };
 
   return (
@@ -173,7 +173,7 @@ export default async function PageMot({ params }) {
               <IconeCrayon taille={18} /> {t.fiche.proposer}
             </Link>
           </div>
-          <BoutonPartage titre={`${fiche.mot} – Mofwazé`} libelle={t.fiche.partager} confirmation={t.fiche.lienCopie} />
+          <BoutonPartage titre={`${fiche.mot} – Chalviraj`} libelle={t.fiche.partager} confirmation={t.fiche.lienCopie} />
           <nav className="voisins" aria-label={`${t.fiche.precedent} / ${t.fiche.suivant}`}>
             {fiche.precedent ? (
               <Link href={`/mo/${fiche.precedent.slug}`} rel="prev">

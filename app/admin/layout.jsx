@@ -1,7 +1,7 @@
 import './admin.css';
 
 export const metadata = {
-  title: { default: 'Administration', template: '%s | Admin Mofwazé' },
+  title: { default: 'Administration', template: '%s | Admin Chalviraj' },
   robots: { index: false, follow: false },
 };
 

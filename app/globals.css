@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Mofwazé – styles du site public
+   Chalviraj – styles du site public
    Les couleurs reprennent celles du site d'origine.
    ========================================================================== */
 
@@ -1846,6 +1846,66 @@ textarea.saisie {
 
 .texte-page li {
   margin-bottom: 6px;
+}
+
+.bloc-code {
+  background: var(--encre);
+  color: #f7ecd6;
+  border-radius: var(--rayon-moyen);
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  margin: 12px 0 20px;
+}
+
+code {
+  background: var(--creme-2);
+  border: 1px solid var(--sable-clair);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+.bloc-code code,
+pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.tableau code,
+.tableau-legal code {
+  white-space: nowrap;
+}
+
+.bloc-copiable {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--creme-2);
+  border: 1px solid var(--sable-clair);
+  border-radius: var(--rayon-moyen);
+  padding: 12px 14px;
+  margin: 12px 0 20px;
+}
+
+.bloc-copiable pre {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  cursor: text;
+}
+
+.bloc-copiable button {
+  flex-shrink: 0;
 }
 
 .tableau-defilant {

@@ -169,7 +169,7 @@ function litteral(v) {
 }
 
 const lignes = [
-  '-- Mofwazé : données initiales générées depuis dico-kreyol.sqlite',
+  '-- Chalviraj : données initiales générées depuis dico-kreyol.sqlite',
   `-- Généré le ${new Date().toISOString()}`,
   'SET NAMES utf8mb4;',
   'SET FOREIGN_KEY_CHECKS = 0;',

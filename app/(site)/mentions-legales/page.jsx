@@ -3,7 +3,7 @@ import ValeurLegale from '@/components/ValeurLegale';
 import { formaterJour } from '@/lib/dates';
 import { textes } from '@/lib/langue';
 import { MENTIONS } from '@/lib/mentions';
-import { CONTACT_EMAIL, SITE_URL } from '@/lib/site';
+import { CONTACT_FORMULAIRE, SITE_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Mentions légales',
@@ -29,7 +29,7 @@ export default async function MentionsLegales() {
 
       <h2>Éditeur du site</h2>
       <p>
-        Le site {domaine} (« Mofwazé ») est édité par <ValeurLegale valeur={editeur.nom} />
+        Le site {domaine} (« Chalviraj ») est édité par <ValeurLegale valeur={editeur.nom} />
         {editeur.adresse !== null && (
           <>
             , <ValeurLegale valeur={editeur.adresse} />
@@ -39,9 +39,9 @@ export default async function MentionsLegales() {
       </p>
       <p>
         Contact :{' '}
-        <a className="lien" href={`mailto:${CONTACT_EMAIL}`}>
-          {CONTACT_EMAIL}
-        </a>
+        <Link className="lien" href={CONTACT_FORMULAIRE}>
+          formulaire de contact
+        </Link>
       </p>
 
       <h2>Directeur de la publication</h2>
@@ -108,7 +108,7 @@ export default async function MentionsLegales() {
         producteurs de bases de données. Toute reproduction ou extraction substantielle, notamment automatisée, sans autorisation écrite
         de l’éditeur est interdite.
       </p>
-      <p>Les courtes citations sont autorisées à condition d’indiquer la source (« Mofwazé » et l’adresse du site).</p>
+      <p>Les courtes citations sont autorisées à condition d’indiquer la source (« Chalviraj » et l’adresse du site).</p>
       <p>
         L’ouvrage « Dictionnaire Créole Guadeloupéen/Français » (Éditions Orphie, 2013) est cité à titre de référence ; il reste la
         propriété de ses auteurs et de son éditeur.

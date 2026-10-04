@@ -15,10 +15,10 @@ app
   .prepare()
   .then(() => {
     createServer((req, res) => handle(req, res)).listen(port, () => {
-      console.log(`> Mofwazé démarré sur le port ${port}`);
+      console.log(`> Chalviraj démarré sur le port ${port}`);
     });
   })
   .catch((erreur) => {
-    console.error('Impossible de démarrer Mofwazé :', erreur);
+    console.error('Impossible de démarrer Chalviraj :', erreur);
     process.exit(1);
   });

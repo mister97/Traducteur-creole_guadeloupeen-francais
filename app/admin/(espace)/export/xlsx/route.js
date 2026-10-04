@@ -23,7 +23,7 @@ export async function GET() {
   ]);
 
   const classeur = new ExcelJS.Workbook();
-  classeur.creator = 'Mofwazé';
+  classeur.creator = 'Chalviraj';
   classeur.created = new Date();
 
   const mots = feuille(classeur, 'Mots', [
@@ -79,7 +79,7 @@ export async function GET() {
   return new Response(tampon, {
     headers: {
       'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      'Content-Disposition': `attachment; filename="mofwaze-${jourGuadeloupe()}.xlsx"`,
+      'Content-Disposition': `attachment; filename="chalviraj-${jourGuadeloupe()}.xlsx"`,
       'Cache-Control': 'no-store',
     },
   });

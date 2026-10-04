@@ -5,6 +5,7 @@ import { formaterJour, jourGuadeloupe } from '@/lib/dates';
 import { ficheParId } from '@/lib/dico';
 import { tirage } from '@/lib/quotidien';
 import { formaterNombre } from '@/lib/textes';
+import { compterDemandes } from '@/lib/acces';
 import { mentionsIncompletes } from '@/lib/mentions';
 import { compterSuggestions, listerSuggestions, purgerDonneesPersonnelles } from '@/lib/suggestions';
 
@@ -13,8 +14,9 @@ export const metadata = { title: 'Tableau de bord' };
 export default async function TableauDeBord() {
   const jour = jourGuadeloupe();
   await purgerDonneesPersonnelles();
-  const [{ chiffres, qualite }, compte, { suggestions }, idMot, idJeu] = await Promise.all([
+  const [{ chiffres, qualite }, demandes, compte, { suggestions }, idMot, idJeu] = await Promise.all([
     tableauDeBord(),
+    compterDemandes(),
     compterSuggestions(),
     listerSuggestions({ statut: 'en_attente', limite: 6 }),
     tirage('mot', jour),
@@ -50,6 +52,10 @@ export default async function TableauDeBord() {
         <Link href="/admin/francais" className="chiffre">
           <strong>{formaterNombre(chiffres.termes)}</strong>
           <span>termes français</span>
+        </Link>
+        <Link href="/admin/partenaires" className={`chiffre ${demandes.pending ? 'chiffre--alerte' : ''}`}>
+          <strong>{demandes.pending}</strong>
+          <span>demande{demandes.pending > 1 ? 's' : ''} d’accès à l’API</span>
         </Link>
       </div>
 

@@ -13,6 +13,9 @@ export default async function sitemap() {
     '/a-propos',
     '/mentions-legales',
     '/confidentialite',
+    '/licence',
+    '/api',
+    '/api/conditions',
     ...lettres.map((l) => `/lettre/${l.lettre.toLowerCase()}`),
   ];
   return [

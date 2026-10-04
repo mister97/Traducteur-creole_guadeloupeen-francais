@@ -7,15 +7,19 @@ import { envoyerSuggestion } from '@/app/(site)/proposer/actions';
 import { f } from '@/lib/textes';
 import EditeurFiche from './EditeurFiche';
 import { useTextes } from './FournisseurTextes';
-import { IconeCrayon, IconeMail } from './Icones';
+import { IconeCrayon } from './Icones';
 
-export default function FormulaireSuggestion({ entree, typeInitial, debut, email }) {
+export default function FormulaireSuggestion({ entree, typeInitial, debut }) {
   const { t } = useTextes();
   const l = t.proposer;
   const router = useRouter();
   const [type, setType] = useState(typeInitial);
   const [etat, action, enCours] = useActionState(envoyerSuggestion, null);
   const [adresse, setAdresse] = useState('');
+  const [message, setMessage] = useState('');
+  const [nom, setNom] = useState('');
+  const [consentement, setConsentement] = useState(false);
+  const [notifier, setNotifier] = useState(true);
   const haut = useRef(null);
 
   useEffect(() => {
@@ -110,7 +114,16 @@ export default function FormulaireSuggestion({ entree, typeInitial, debut, email
             <label htmlFor="message">
               {l.message} {type !== 'remarque' && <span className="champ__facultatif">({l.facultatif})</span>}
             </label>
-            <textarea id="message" name="message" className="saisie" rows={4} maxLength={5000} required={type === 'remarque'} />
+            <textarea
+              id="message"
+              name="message"
+              className="saisie"
+              rows={4}
+              maxLength={5000}
+              required={type === 'remarque'}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
             <p className="champ__aide">{l.messageAide}</p>
           </div>
 
@@ -119,7 +132,7 @@ export default function FormulaireSuggestion({ entree, typeInitial, debut, email
               <label htmlFor="nom">
                 {l.nom} <span className="champ__facultatif">({l.facultatif})</span>
               </label>
-              <input id="nom" name="nom" className="saisie" maxLength={120} autoComplete="name" />
+              <input id="nom" name="nom" className="saisie" maxLength={120} autoComplete="name" value={nom} onChange={(e) => setNom(e.target.value)} />
             </div>
             <div className="champ">
               <label htmlFor="email">
@@ -139,8 +152,20 @@ export default function FormulaireSuggestion({ entree, typeInitial, debut, email
           </div>
           {adresse && type !== 'remarque' && (
             <label className="case" style={{ marginBottom: 18 }}>
-              <input type="checkbox" name="notifier" defaultChecked />
+              <input type="checkbox" name="notifier" checked={notifier} onChange={(e) => setNotifier(e.target.checked)} />
               {l.notifier}
+            </label>
+          )}
+
+          {type !== 'remarque' && (
+            <label className="case" style={{ marginBottom: 18 }}>
+              <input type="checkbox" name="consentement" required checked={consentement} onChange={(e) => setConsentement(e.target.checked)} />
+              <span>
+                {l.consentement}{' '}
+                <Link className="lien" href="/licence" target="_blank">
+                  {l.enSavoirPlus}
+                </Link>
+              </span>
             </label>
           )}
 
@@ -156,13 +181,6 @@ export default function FormulaireSuggestion({ entree, typeInitial, debut, email
           </button>
         </>
       )}
-
-      <p className="champ__aide" style={{ marginTop: 24, display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-        <IconeMail taille={16} /> {l.contact}{' '}
-        <a className="lien" href={`mailto:${email}`}>
-          {email}
-        </a>
-      </p>
     </form>
   );
 }

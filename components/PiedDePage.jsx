@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { textes } from '@/lib/langue';
-import { CONTACT_EMAIL } from '@/lib/site';
+import { CONTACT_FORMULAIRE } from '@/lib/site';
 
 export default async function PiedDePage() {
   const { t } = await textes();
@@ -36,15 +36,23 @@ export default async function PiedDePage() {
           </div>
           <div>
             <h2>{t.pied.contact}</h2>
-            <p>
-              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-            </p>
+            <ul>
+              <li>
+                <Link href={CONTACT_FORMULAIRE}>{t.pied.contactFormulaire}</Link>
+              </li>
+              <li>
+                <Link href="/api">{t.pied.api}</Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div className="pied__bas">
           <span>
             © {new Date().getFullYear()} {t.site.nom}
           </span>
+          <Link href="/licence" rel="license">
+            {t.pied.licence}
+          </Link>
           <Link href="/mentions-legales">{t.pied.mentions}</Link>
           <Link href="/confidentialite">{t.pied.confidentialite}</Link>
         </div>

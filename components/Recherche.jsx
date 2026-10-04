@@ -6,7 +6,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { useTextes } from './FournisseurTextes';
 import { IconeCroix, IconeEchange, IconeLoupe } from './Icones';
 
-const CLE_DIRECTION = 'mofwaze-direction';
+const CLE_DIRECTION = 'chalviraj-direction';
 
 function lireDirection() {
   try {

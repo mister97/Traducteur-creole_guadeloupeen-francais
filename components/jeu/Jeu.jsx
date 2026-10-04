@@ -10,8 +10,8 @@ import styles from './jeu.module.css';
 
 const LONGUEUR = 5;
 const ESSAIS_MAX = 6;
-const CLE_STATS = 'mofwaze-jeu-stats';
-const CLE_REGLES = 'mofwaze-jeu-regles-vues';
+const CLE_STATS = 'chalviraj-jeu-stats';
+const CLE_REGLES = 'chalviraj-jeu-regles-vues';
 // Disposition du clavier guadeloupéen : pas de Q ni de X (K à la place du Q),
 // et pas de touches accentuées puisque les accents ne comptent pas dans le jeu.
 const CLAVIER = [
@@ -58,7 +58,7 @@ function compteARebours(ms) {
 
 export default function Jeu({ jour, dateTexte, numero, finDuJour, urlSite, t }) {
   const router = useRouter();
-  const clePartie = `mofwaze-jeu-${jour}`;
+  const clePartie = `chalviraj-jeu-${jour}`;
   const [pret, setPret] = useState(false);
   const [essais, setEssais] = useState([]);
   const [saisie, setSaisie] = useState('');
