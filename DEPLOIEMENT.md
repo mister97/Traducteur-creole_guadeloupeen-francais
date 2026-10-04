@@ -145,7 +145,7 @@ Le dictionnaire lui-même se modifie dans `/admin` : aucune mise en ligne n'est 
 - Node.js › **Exécuter le script** › `db:init` : crée les tables manquantes sans toucher aux données ;
 - ou importez le fichier de `database/migrations/` dans phpMyAdmin.
 
-`/api/sante` indique `ER_NO_SUCH_TABLE` avec un conseil si une migration a été oubliée.
+En cas de doute, ouvrez **`/api/sante`** : la page compare le schéma de la base à ce qu'attend le code et répond `"schema": "à jour"`, ou bien la liste exacte des tables et colonnes manquantes (statut 503). C'est le premier endroit à regarder quand une page renvoie 500 alors que le reste du site fonctionne.
 
 Depuis octobre 2026, `db:init` tient la liste des migrations déjà appliquées dans une table `migrations` : la commande est sans danger, elle ne rejoue rien deux fois.
 
