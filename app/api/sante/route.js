@@ -1,4 +1,6 @@
 import { descriptionConnexion } from '@/lib/config-db.mjs';
+import { rideauActif } from '@/lib/lancement';
+import { SITE_URL } from '@/lib/site';
 import { premiere, requete } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
@@ -22,8 +24,12 @@ const COLONNES_ATTENDUES = [
 ];
 
 export async function GET() {
+  // SITE_URL n'est pas un secret, et c'est elle qui construit les liens
+  // d'invitation : une valeur inattendue se voit ici tout de suite.
+  const site = { SITE_URL, rideau: rideauActif() ? `fermé jusqu'au ${process.env.DATE_LANCEMENT}` : 'ouvert' };
+
   const variables = Object.fromEntries(
-    ['DATABASE_URL', 'DB_SOCKET', 'DB_HOST', 'DB_PORT', 'DB_USER', 'DB_PASSWORD', 'DB_NAME', 'SESSION_SECRET', 'SMTP_HOST'].map((nom) => [
+    ['DATABASE_URL', 'DB_SOCKET', 'DB_HOST', 'DB_PORT', 'DB_USER', 'DB_PASSWORD', 'DB_NAME', 'SESSION_SECRET', 'SMTP_HOST', 'DATE_LANCEMENT'].map((nom) => [
       nom,
       Boolean(process.env[nom]),
     ]),
@@ -57,6 +63,7 @@ export async function GET() {
         base: 'connectée',
         mots,
         schema: aJour ? 'à jour' : 'incomplet',
+        site,
         ...(aJour ? {} : { tablesManquantes, colonnesManquantes, conseil: 'Lancez « npm run db:init » (sans --ecraser) pour appliquer les migrations.' }),
         variables,
       },
@@ -74,6 +81,7 @@ export async function GET() {
           ? { conseil: `Table manquante (${erreur.sqlMessage ?? ''}) : lancez « npm run db:init » sans --ecraser.` }
           : {}),
         connexion,
+        site,
         ...(erreur.address ? { adresseEssayee: `${erreur.address}${erreur.port ? `:${erreur.port}` : ''}` } : {}),
         variables,
       },

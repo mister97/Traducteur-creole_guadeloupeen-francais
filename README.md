@@ -87,6 +87,10 @@ Toutes les actions qui modifient quelque chose, ainsi que les connexions, sont i
 
 Garde-fous : verrouillage du compte après 5 échecs pendant 15 minutes, message de connexion identique que le compte existe ou non, liens d'invitation et de réinitialisation à usage unique dont seule l'empreinte est en base, et fermeture de toutes les sessions dès qu'un mot de passe change ou qu'un compte est suspendu.
 
+## Avant-lancement
+
+`DATE_LANCEMENT` (date ISO avec décalage, ex. `2026-10-28T00:00:00-04:00`) ferme le site public derrière un décompte jusqu'à la date indiquée, puis se lève seule. L'administration reste accessible, et une personne connectée voit le site normalement. Variable absente ou vide : aucun rideau.
+
 ## API et partenaires
 
 | Page | Rôle |
