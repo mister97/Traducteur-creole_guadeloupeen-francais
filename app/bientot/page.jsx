@@ -38,7 +38,7 @@ export default async function PageBientot() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/img/logo-header.png" alt="" width="72" height="72" />
 
-        <p className="rideau__surtitre">{b.surtitre}</p>
+        {/* <p className="rideau__surtitre">{b.surtitre}</p> */}
         <h1 className="rideau__titre">{t.site.nom}</h1>
         <p className="rideau__soustitre">{t.site.sousTitre}</p>
 
