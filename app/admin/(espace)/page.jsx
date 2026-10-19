@@ -8,19 +8,24 @@ import { formaterNombre } from '@/lib/textes';
 import { compterDemandes } from '@/lib/acces';
 import { mentionsIncompletes } from '@/lib/mentions';
 import { compterSuggestions, listerSuggestions, purgerDonneesPersonnelles } from '@/lib/suggestions';
+import { dernieresActions, libelleAction, purgerJournal } from '@/lib/journal';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Tableau de bord' };
 
-export default async function TableauDeBord() {
+export default async function TableauDeBord({ searchParams }) {
+  await exigerAdmin();
+  const p = await searchParams;
   const jour = jourGuadeloupe();
-  await purgerDonneesPersonnelles();
-  const [{ chiffres, qualite }, demandes, compte, { suggestions }, idMot, idJeu] = await Promise.all([
+  await Promise.all([purgerDonneesPersonnelles(), purgerJournal()]);
+  const [{ chiffres, qualite }, demandes, compte, { suggestions }, idMot, idJeu, actions] = await Promise.all([
     tableauDeBord(),
     compterDemandes(),
     compterSuggestions(),
     listerSuggestions({ statut: 'en_attente', limite: 6 }),
     tirage('mot', jour),
     tirage('jeu', jour),
+    dernieresActions(8),
   ]);
   const [motDuJour, motJeu] = await Promise.all([idMot && ficheParId(idMot), idJeu && ficheParId(idJeu)]);
 
@@ -28,6 +33,12 @@ export default async function TableauDeBord() {
     <>
       <h1 className="admin__titre">Tableau de bord</h1>
       <p className="admin__sous-titre">{formaterJour(jour, 'fr', { annee: true })} (heure de Guadeloupe)</p>
+
+      {p.interdit && (
+        <div className="alerte alerte--erreur">
+          Cette page est réservée aux propriétaires. Demandez à l’un d’eux de modifier votre rôle si vous en avez besoin.
+        </div>
+      )}
 
       {mentionsIncompletes() && (
         <div className="alerte alerte--erreur">
@@ -92,6 +103,28 @@ export default async function TableauDeBord() {
           <p style={{ marginTop: 14 }}>
             <Link href="/admin/quotidien" className="bouton bouton--blanc bouton--petit">
               Gérer les tirages
+            </Link>
+          </p>
+        </section>
+
+        <section className="carte admin-bloc">
+          <h2>Dernières actions</h2>
+          {actions.length === 0 ? (
+            <p className="tableau__discret">Rien encore.</p>
+          ) : (
+            <ul className="liste-journal">
+              {actions.map((a) => (
+                <li key={a.id}>
+                  <span className="tableau__discret">{dateHeure(a.created_at)}</span> — {a.utilisateur_nom ?? 'compte supprimé'} :{' '}
+                  {libelleAction(a.action)}
+                  {a.cible_label ? ` (${a.cible_label})` : ''}
+                </li>
+              ))}
+            </ul>
+          )}
+          <p style={{ marginTop: 14 }}>
+            <Link href="/admin/journal" className="bouton bouton--blanc bouton--petit">
+              Voir le journal
             </Link>
           </p>
         </section>

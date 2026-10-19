@@ -3,6 +3,7 @@
 import { redirect } from 'next/navigation';
 import { changerStatutDemande, obtenirDemande } from '@/lib/acces';
 import { exigerAdmin } from '@/lib/auth';
+import { journaliser } from '@/lib/journal';
 import { mailEvenementPartenaire, mailInvitationPartenaire, mailReinitialisation } from '@/lib/mail';
 import {
   changerExport,
@@ -51,6 +52,7 @@ export async function approuverDemande(_etat, formData) {
     usage_type: champ(formData, 'usage_type') === 'commercial_autorise' ? 'commercial_autorise' : 'non_commercial',
   });
   await changerStatutDemande(demande.id, 'approved');
+  await journaliser('partenaire.approuve', { cible: 'partenaire', cibleId: id, cibleLabel: demande.email });
   await envoyerInvitation(await obtenirPartenaire(id));
   redirect(`/admin/partenaires?cree=${id}`);
 }
@@ -71,6 +73,7 @@ export async function ajouterPartenaire(_etat, formData) {
     usage_type: champ(formData, 'usage_type') === 'commercial_autorise' ? 'commercial_autorise' : 'non_commercial',
   });
   if (formData.get('export_autorise') === 'on') await changerExport(id, true);
+  await journaliser('partenaire.cree', { cible: 'partenaire', cibleId: id, cibleLabel: `${name} <${email}>` });
   await envoyerInvitation(await obtenirPartenaire(id));
   redirect(`/admin/partenaires?cree=${id}`);
 }
@@ -78,13 +81,24 @@ export async function ajouterPartenaire(_etat, formData) {
 export async function basculerExport(formData) {
   await exigerAdmin();
   const partenaire = await obtenirPartenaire(Number(champ(formData, 'partenaire_id')));
-  if (partenaire) await changerExport(partenaire.id, !partenaire.export_autorise);
+  if (partenaire) {
+    await changerExport(partenaire.id, !partenaire.export_autorise);
+    await journaliser('partenaire.export', {
+      cible: 'partenaire',
+      cibleId: partenaire.id,
+      cibleLabel: partenaire.name,
+      details: partenaire.export_autorise ? 'export retiré' : 'export autorisé',
+    });
+  }
   redirect(avecRetour(formData, 'export=1'));
 }
 
 export async function rejeterDemande(formData) {
   await exigerAdmin();
-  await changerStatutDemande(Number(champ(formData, 'demande_id')), 'rejected');
+  const demandeId = Number(champ(formData, 'demande_id'));
+  const demande = await obtenirDemande(demandeId);
+  await changerStatutDemande(demandeId, 'rejected');
+  await journaliser('partenaire.rejete', { cible: 'demande', cibleId: demandeId, cibleLabel: demande?.email });
   redirect('/admin/partenaires?rejetee=1');
 }
 
@@ -101,9 +115,21 @@ export async function renvoyerInvitation(formData) {
     } catch (erreur) {
       console.error('Lien de réinitialisation non envoyé :', erreur.message);
     }
+    await journaliser('partenaire.invitation', {
+      cible: 'partenaire',
+      cibleId: partenaire.id,
+      cibleLabel: partenaire.name,
+      details: 'lien de réinitialisation',
+    });
     redirect(avecRetour(formData, 'reinitialisation=1'));
   }
   await envoyerInvitation(partenaire);
+  await journaliser('partenaire.invitation', {
+    cible: 'partenaire',
+    cibleId: partenaire.id,
+    cibleLabel: partenaire.name,
+    details: 'nouvelle invitation',
+  });
   redirect(avecRetour(formData, 'invitation=1'));
 }
 
@@ -113,6 +139,12 @@ export async function revoquerCleAdmin(formData) {
   const partenaireId = Number(champ(formData, 'partenaire_id'));
   const partenaire = await obtenirPartenaire(partenaireId);
   if (partenaire && (await revoquerCle(partenaireId, Number(champ(formData, 'cle_id'))))) {
+    await journaliser('partenaire.cle_revoquee', {
+      cible: 'partenaire',
+      cibleId: partenaireId,
+      cibleLabel: partenaire.name,
+      details: champ(formData, 'label') || undefined,
+    });
     try {
       await mailEvenementPartenaire(partenaire, 'cle_revoquee', champ(formData, 'label'));
     } catch (erreur) {
@@ -128,6 +160,12 @@ export async function basculerSuspension(formData) {
   if (!partenaire) redirect(avecRetour(formData, 'statut=1'));
   const suspendre = !partenaire.suspended_at;
   await changerSuspension(partenaire.id, suspendre);
+  await journaliser(suspendre ? 'partenaire.suspendu' : 'partenaire.reactive', {
+    cible: 'partenaire',
+    cibleId: partenaire.id,
+    cibleLabel: partenaire.name,
+    details: champ(formData, 'raison') || undefined,
+  });
   try {
     await mailEvenementPartenaire(partenaire, suspendre ? 'suspension' : 'reactivation', champ(formData, 'raison'));
   } catch (erreur) {

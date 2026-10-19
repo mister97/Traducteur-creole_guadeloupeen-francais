@@ -67,8 +67,7 @@ Ajoutez ensuite les **variables d'environnement** (bouton *Variables d'environne
 | `DB_SOCKET` | *facultatif* : `/var/run/mysqld/mysqld.sock` pour se connecter par socket local (remplace `DB_HOST`/`DB_PORT`) si l'utilisateur MySQL n'accepte que « localhost » |
 | `SITE_URL` | `https://chalviraj.com` |
 | `CONTACT_EMAIL` | `kontakt@chalviraj.com` |
-| `ADMIN_PASSWORD_HASH` | résultat de `npm run admin:hash -- "votre mot de passe"` (à lancer sur votre poste) |
-| `SESSION_SECRET` | également fourni par `admin:hash` (32 caractères minimum) |
+| `SESSION_SECRET` | chaîne aléatoire de 32 caractères minimum : `npm run secret` (à lancer sur votre poste) |
 | `SMTP_HOST` | `ssl0.ovh.net` |
 | `SMTP_PORT` | `465` |
 | `SMTP_USER` | `kontakt@chalviraj.com` (adresse complète) |
@@ -117,6 +116,20 @@ Le site change de nom : l'adresse historique `mofwazajkreyolgwadloupeyen.fr` doi
 
 La redirection doit être permanente (301) : c'est elle qui transmet le référencement à la nouvelle adresse.
 
+## 5 ter. Le premier compte d'administration
+
+Il n'y a pas de mot de passe d'administration dans la configuration : chaque personne a son compte. Le tout premier se crée en ligne de commande, puisque personne ne peut encore se connecter.
+
+Dans Plesk › **Node.js** › *Exécuter le script*, ou en SSH depuis le dossier de l'application :
+
+```
+npm run admin:creer -- "Prénom Nom" adresse@exemple.fr
+```
+
+La commande affiche un lien valable 48 heures, utilisable une seule fois : ouvrez-le pour choisir votre mot de passe. Ce lien n'est plus récupérable ensuite — seule son empreinte est conservée en base. S'il se perd, relancez la commande.
+
+Ensuite, tout se passe dans **/admin/utilisateurs** : vous y créez les comptes suivants, qui reçoivent leur invitation par e-mail. Deux rôles existent — *éditeur* (dictionnaire, suggestions, partenaires) et *propriétaire* (en plus : gestion des comptes).
+
 ## 6. HTTPS
 
 Une fois le DNS en place (étape 7) : Sites Web & Domaines › *domaine* › **SSL/TLS** › **Let's Encrypt**, puis activez la redirection HTTP → HTTPS.
@@ -155,6 +168,7 @@ Depuis octobre 2026, `db:init` tient la liste des migrations déjà appliquées 
 | `2026-10-04-licence-consentement.sql` | Consentement du contributeur à la licence (`suggestions.consent_license`) |
 | `2026-10-05-api-partenaires.sql` | API publique et espace partenaire : `partners`, `api_keys`, `api_requests`, `api_usage_daily`, `access_requests`, `auth_tokens`, `terms_acceptances` |
 | `2026-10-06-export-complet.sql` | Autorisation d'export complet par partenaire (`partners.export_autorise`) |
+| `2026-10-19-comptes-admin.sql` | Comptes nominatifs de l'administration et journal des actions : `admin_users`, `admin_tokens`, `admin_audit` |
 
 ## Tâche planifiée : usage de l'API
 

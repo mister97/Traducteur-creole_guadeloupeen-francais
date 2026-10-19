@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import FormulaireMot from '@/components/admin/FormulaireMot';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Nouveau mot' };
 
-export default function PageNouveauMot() {
+export default async function PageNouveauMot() {
+  await exigerAdmin();
   return (
     <>
       <p className="tableau__discret" style={{ margin: 0 }}>

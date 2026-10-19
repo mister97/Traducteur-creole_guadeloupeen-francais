@@ -34,7 +34,6 @@ DB_PASSWORD=dico
 DB_NAME=dico_kreyol
 SITE_URL=http://localhost:3000
 SESSION_SECRET=une-chaine-aleatoire-d-au-moins-32-caracteres
-ADMIN_PASSWORD=un-mot-de-passe-local
 ```
 
 Sans configuration SMTP, les mails sont affichés dans le terminal au lieu d'être envoyés.
@@ -65,10 +64,28 @@ Scripts :
 
 - `npm run db:generer` : régénère `database/donnees.sql(.gz)` depuis `database/dico-kreyol.sqlite` (import initial uniquement) ;
 - `npm run db:init` : crée les tables et importe les données si le dictionnaire est vide (`-- --ecraser` pour tout réimporter, suggestions conservées) ;
-- `npm run admin:hash -- "mot de passe"` : produit `ADMIN_PASSWORD_HASH` et un `SESSION_SECRET` ;
+- `npm run secret` : produit un `SESSION_SECRET` ;
+- `npm run admin:creer -- "Nom Prénom" adresse@exemple.fr` : crée un compte d’administration et affiche son lien d’invitation (utile pour le tout premier compte) ;
 - `npm run api:agreger` : agrège l'usage de l'API et purge le journal (tâche quotidienne).
 
 `db:init` applique aussi les fichiers de `database/migrations/` qui ne l'ont pas encore été, et garde la liste dans une table `migrations`.
+
+## Administration
+
+Chaque personne qui gère le dictionnaire a son propre compte : il n'y a pas de mot de passe partagé, et aucun secret d'administration dans la configuration. Le mot de passe est choisi par la personne elle-même, via un lien à usage unique ; il est stocké en Argon2id.
+
+```bash
+npm run admin:creer -- "Prénom Nom" adresse@exemple.fr   # premier compte : affiche un lien d'invitation
+```
+
+Ensuite, les comptes se gèrent dans **/admin/utilisateurs**. Deux rôles :
+
+- **éditeur** : dictionnaire, suggestions, mot du jour, partenaires de l'API, exports ;
+- **propriétaire** : en plus, la création, la suspension et la suppression des comptes.
+
+Toutes les actions qui modifient quelque chose, ainsi que les connexions, sont inscrites dans **/admin/journal** (qui, quoi, quand). Les lignes y restent 24 mois, et survivent à la suppression du compte : le nom de la personne y est figé au moment de l'action.
+
+Garde-fous : verrouillage du compte après 5 échecs pendant 15 minutes, message de connexion identique que le compte existe ou non, liens d'invitation et de réinitialisation à usage unique dont seule l'empreinte est en base, et fermeture de toutes les sessions dès qu'un mot de passe change ou qu'un compte est suspendu.
 
 ## API et partenaires
 

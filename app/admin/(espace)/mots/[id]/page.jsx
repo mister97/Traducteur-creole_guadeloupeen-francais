@@ -6,10 +6,12 @@ import FormulaireMot from '@/components/admin/FormulaireMot';
 import { dateHeure } from '@/components/admin/utils';
 import { requete } from '@/lib/db';
 import { chargerFiche } from '@/lib/fiches';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Modifier un mot' };
 
 export default async function PageMot({ params, searchParams }) {
+  await exigerAdmin();
   const { id } = await params;
   const { cree } = await searchParams;
   const entree = await chargerFiche(Number(id));

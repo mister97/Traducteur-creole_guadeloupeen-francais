@@ -7,12 +7,14 @@ import { dateHeure } from '@/components/admin/utils';
 import { compterDemandes, listerDemandes } from '@/lib/acces';
 import { TERMS_VERSION } from '@/lib/conditions';
 import { listerPartenaires, usageTousPartenaires } from '@/lib/partenaires';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Partenaires' };
 
 const STATUTS = { pending: 'En attente', approved: 'Approuvées', rejected: 'Rejetées' };
 
 export default async function PagePartenaires({ searchParams }) {
+  await exigerAdmin();
   const p = await searchParams;
   const statut = STATUTS[p.statut_demande] ? p.statut_demande : 'pending';
   const [compte, demandes, partenaires, usage] = await Promise.all([

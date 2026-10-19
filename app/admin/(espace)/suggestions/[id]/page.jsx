@@ -10,6 +10,7 @@ import { ficheEnLignes, normaliserFiche } from '@/lib/fiche-format';
 import { chargerFiche } from '@/lib/fiches';
 import { rechercheFrancais, termesDepuisTraduction } from '@/lib/normalisation.mjs';
 import { obtenirSuggestion } from '@/lib/suggestions';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Suggestion' };
 
@@ -35,6 +36,7 @@ function fusionner(existante, proposee) {
 }
 
 export default async function PageSuggestion({ params, searchParams }) {
+  await exigerAdmin();
   const { id } = await params;
   const { fusion } = await searchParams;
   const suggestion = await obtenirSuggestion(Number(id));

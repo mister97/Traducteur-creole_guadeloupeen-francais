@@ -5,6 +5,7 @@ import FormulairePlanification from '@/components/admin/FormulairePlanification'
 import { historiqueQuotidien } from '@/lib/admin';
 import { decalerJour, formaterJour, jourGuadeloupe } from '@/lib/dates';
 import { tirage } from '@/lib/quotidien';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Mot du jour & jeu' };
 
@@ -39,6 +40,7 @@ function CelluleMot({ valeur, jour, type, modifiable }) {
 }
 
 export default async function PageQuotidien() {
+  await exigerAdmin();
   const aujourdhui = jourGuadeloupe();
   await Promise.all([tirage('mot', aujourdhui), tirage('jeu', aujourdhui)]);
   const { jours } = await historiqueQuotidien(30);

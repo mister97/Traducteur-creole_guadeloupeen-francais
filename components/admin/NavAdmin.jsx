@@ -11,11 +11,13 @@ const LIENS = [
   { href: '/admin/quotidien', libelle: 'Mot du jour & jeu' },
   { href: '/admin/partenaires', libelle: 'Partenaires', badgeDemandes: true },
   { href: '/admin/export', libelle: 'Export' },
+  { href: '/admin/journal', libelle: 'Journal' },
+  { href: '/admin/utilisateurs', libelle: 'Comptes', proprietaire: true },
 ];
 
-export default function NavAdmin({ enAttente, demandesEnAttente }) {
+export default function NavAdmin({ enAttente, demandesEnAttente, proprietaire }) {
   const chemin = usePathname();
-  return LIENS.map((l) => {
+  return LIENS.filter((l) => !l.proprietaire || proprietaire).map((l) => {
     const actif = l.exact ? chemin === l.href : chemin.startsWith(l.href);
     const compte = (l.badge && enAttente) || (l.badgeDemandes && demandesEnAttente) || 0;
     return (

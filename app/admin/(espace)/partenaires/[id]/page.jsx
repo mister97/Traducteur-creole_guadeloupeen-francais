@@ -6,10 +6,12 @@ import { dateHeure } from '@/components/admin/utils';
 import { agregerSiNecessaire } from '@/lib/api-agregation';
 import { historiqueAcceptations, TERMS_VERSION } from '@/lib/conditions';
 import { listerCles, obtenirPartenaire, usagePartenaire } from '@/lib/partenaires';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Partenaire' };
 
 export default async function PagePartenaire({ params, searchParams }) {
+  await exigerAdmin();
   const { id } = await params;
   const p = await searchParams;
   const partenaire = await obtenirPartenaire(Number(id));

@@ -1,6 +1,7 @@
 import ExcelJS from 'exceljs';
 import { donneesExport } from '@/lib/admin';
-import { estAdmin } from '@/lib/auth';
+import { utilisateurConnecte } from '@/lib/auth';
+import { journaliser } from '@/lib/journal';
 import { jourGuadeloupe } from '@/lib/dates';
 import { requete } from '@/lib/db';
 
@@ -15,7 +16,8 @@ function feuille(classeur, nom, colonnes) {
 }
 
 export async function GET() {
-  if (!(await estAdmin())) return new Response('Non autorisé', { status: 401 });
+  if (!(await utilisateurConnecte())) return new Response('Non autorisé', { status: 401 });
+  await journaliser('export.xlsx');
 
   const [entrees, suggestions] = await Promise.all([
     donneesExport(),

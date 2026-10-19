@@ -1,6 +1,8 @@
+import { exigerAdmin } from '@/lib/auth';
 export const metadata = { title: 'Export' };
 
-export default function PageExport() {
+export default async function PageExport() {
+  await exigerAdmin();
   return (
     <>
       <h1 className="admin__titre">Export</h1>

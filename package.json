@@ -12,8 +12,9 @@
     "start": "node server.js",
     "db:generer": "node scripts/sqlite-vers-mysql.mjs",
     "db:init": "node scripts/db-init.mjs",
-    "admin:hash": "node scripts/hash-mot-de-passe.mjs",
-    "api:agreger": "node scripts/api-agregation.mjs"
+    "api:agreger": "node scripts/api-agregation.mjs",
+    "admin:creer": "node scripts/admin-creer.mjs",
+    "secret": "node scripts/secret.mjs"
   },
   "dependencies": {
     "@node-rs/argon2": "^2.2.1",

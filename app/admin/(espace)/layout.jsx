@@ -6,7 +6,7 @@ import { compterSuggestions } from '@/lib/suggestions';
 import { deconnexion } from '../actions';
 
 export default async function EspaceAdminLayout({ children }) {
-  await exigerAdmin();
+  const moi = await exigerAdmin();
   const [{ en_attente: enAttente }, demandes] = await Promise.all([compterSuggestions(), compterDemandes()]);
 
   return (
@@ -20,8 +20,12 @@ export default async function EspaceAdminLayout({ children }) {
             <small>Administration</small>
           </span>
         </Link>
-        <NavAdmin enAttente={enAttente} demandesEnAttente={demandes.pending} />
+        <NavAdmin enAttente={enAttente} demandesEnAttente={demandes.pending} proprietaire={moi.role === 'proprietaire'} />
         <div className="admin__bas">
+          <Link href="/admin/compte" className="admin__lien admin__moi">
+            <strong>{moi.name}</strong>
+            <small>{moi.role === 'proprietaire' ? 'Propriétaire' : 'Éditeur'}</small>
+          </Link>
           <Link href="/" className="admin__lien" target="_blank">
             Voir le site ↗
           </Link>

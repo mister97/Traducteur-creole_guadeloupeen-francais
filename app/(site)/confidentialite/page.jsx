@@ -62,6 +62,16 @@ export default async function Confidentialite() {
               <td>{CONSERVATION.journauxMois} mois maximum</td>
             </tr>
             <tr>
+              <td>Administration du site</td>
+              <td>
+                Journal des actions des personnes qui gèrent le dictionnaire : nom, adresse e-mail, action effectuée, date,
+                empreinte de l’adresse IP. Ne concerne pas les visiteurs.
+              </td>
+              <td>Savoir qui a modifié quoi, et pouvoir revenir sur une erreur</td>
+              <td>Intérêt légitime</td>
+              <td>{CONSERVATION.journalAdminMois} mois</td>
+            </tr>
+            <tr>
               <td>
                 Envoi d’une{' '}
                 <Link className="lien" href="/proposer">
@@ -120,7 +130,7 @@ export default async function Confidentialite() {
               <td>
                 Cookie <code>chalviraj_admin</code>
               </td>
-              <td>Session de l’espace d’administration (administrateurs uniquement)</td>
+              <td>Session de l’espace d’administration (personnes qui gèrent le dictionnaire uniquement)</td>
               <td>7 jours</td>
             </tr>
             <tr>

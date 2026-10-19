@@ -3,11 +3,13 @@ import Pagination from '@/components/Pagination';
 import { dateHeure, extrait, libelleStatut, libelleType } from '@/components/admin/utils';
 import { TEXTES } from '@/lib/textes';
 import { compterSuggestions, listerSuggestions, STATUTS } from '@/lib/suggestions';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Suggestions' };
 const PAR_PAGE = 30;
 
 export default async function PageSuggestions({ searchParams }) {
+  await exigerAdmin();
   const p = await searchParams;
   const statut = STATUTS.includes(p.statut) ? p.statut : 'en_attente';
   const page = Math.max(1, Number.parseInt(p.page, 10) || 1);

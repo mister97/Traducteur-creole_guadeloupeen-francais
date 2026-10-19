@@ -6,11 +6,13 @@ import Pagination from '@/components/Pagination';
 import { listerTermes } from '@/lib/admin';
 import { slugFrancais } from '@/lib/normalisation.mjs';
 import { formaterNombre, TEXTES } from '@/lib/textes';
+import { exigerAdmin } from '@/lib/auth';
 
 export const metadata = { title: 'Termes français' };
 const PAR_PAGE = 50;
 
 export default async function PageTermes({ searchParams }) {
+  await exigerAdmin();
   const p = await searchParams;
   const q = String(p.q ?? '').slice(0, 80);
   const page = Math.max(1, Number.parseInt(p.page, 10) || 1);
