@@ -1,9 +1,12 @@
 import { cookies } from 'next/headers';
+import AnnonceNom from '@/components/AnnonceNom';
 import EnTete from '@/components/EnTete';
 import PiedDePage from '@/components/PiedDePage';
+import { ANCIEN_DOMAINE, ANCIEN_NOM, annonceActive } from '@/lib/annonce';
 import { rideauActif } from '@/lib/lancement';
 import { textes } from '@/lib/langue';
 import { COOKIE_ADMIN } from '@/lib/session';
+import { SITE_URL } from '@/lib/site';
 
 export default async function SiteLayout({ children }) {
   // Rappel discret quand le site est encore fermé au public : sans lui, on
@@ -22,6 +25,14 @@ export default async function SiteLayout({ children }) {
       <EnTete />
       <main id="contenu">{children}</main>
       <PiedDePage />
+      {annonceActive() && (
+        <AnnonceNom
+          t={t.annonce}
+          ancienNom={ANCIEN_NOM}
+          ancienDomaine={ANCIEN_DOMAINE}
+          nouveauDomaine={SITE_URL.replace(/^https?:\/\//, '')}
+        />
+      )}
     </>
   );
 }

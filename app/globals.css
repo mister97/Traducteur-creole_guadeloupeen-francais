@@ -2100,3 +2100,77 @@ pre code {
   color: var(--encre);
   border-color: var(--turquoise);
 }
+
+/* --- Annonce du changement de nom -------------------------------------- */
+
+.annonce {
+  width: min(460px, calc(100vw - 32px));
+  border: 2px solid var(--sable-clair);
+  border-radius: var(--rayon);
+  background: var(--blanc);
+  color: var(--encre);
+  padding: 28px 26px 24px;
+  box-shadow: var(--ombre-forte);
+  text-align: center;
+}
+
+.annonce::backdrop {
+  background: rgb(43 29 14 / 55%);
+}
+
+.annonce__surtitre {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--turquoise-fonce);
+}
+
+.annonce__titre {
+  margin: 14px 0 0;
+  font-family: var(--police-titre);
+  line-height: 1.1;
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+}
+
+.annonce__avant {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--encre-3);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.annonce__fleche {
+  font-size: 1.3rem;
+  color: var(--corail);
+  line-height: 1;
+}
+
+.annonce__apres {
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.annonce__texte {
+  margin: 16px 0 0;
+  color: var(--encre-2);
+  text-wrap: pretty;
+}
+
+.annonce__adresses {
+  margin: 16px 0 20px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.annonce__adresses s {
+  color: var(--encre-3);
+  font-weight: 600;
+}
