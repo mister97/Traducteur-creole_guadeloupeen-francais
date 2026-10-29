@@ -1,5 +1,6 @@
 import { decalerJour, jourGuadeloupe } from '@/lib/dates';
 import { lettresJeu } from '@/lib/normalisation.mjs';
+import { noterPartie } from '@/lib/statistiques';
 import { evaluer, motsValides, solutionDuJour } from '@/lib/quotidien';
 
 const ESSAIS_MAX = 6;
@@ -34,6 +35,9 @@ export async function POST(request) {
   const gagne = essai === solution.lettres;
   const numero = Math.min(ESSAIS_MAX, Math.max(1, Number(corps?.numero) || 1));
   const fini = gagne || numero >= ESSAIS_MAX;
+
+  // Compteurs agrégés : le serveur connaît déjà l'issue, il n'a qu'à la retenir
+  await noterPartie({ jour, debut: numero === 1, fini, gagne, coups: numero });
 
   return Response.json(
     {

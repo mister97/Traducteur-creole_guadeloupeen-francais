@@ -3,6 +3,7 @@
 import { useId, useMemo, useState } from 'react';
 import { termesDepuisTraduction } from '@/lib/normalisation.mjs';
 import { IconeBas, IconeCroix, IconeHaut, IconePlus } from './Icones';
+import { CATEGORIES, MARQUES } from '@/lib/fiche-format';
 
 // Clés stables pour React : indices au premier rendu (identiques serveur/client), compteur ensuite
 let compteur = 0;
@@ -22,6 +23,10 @@ function versEdition(fiche) {
     sens: (fiche?.sens?.length ? fiche.sens : [{}]).map((s, i) => ({
       cle: `s${i}`,
       traduction: s.traduction ?? '',
+      categorie: s.categorie ?? '',
+      marque: s.marque ?? '',
+      definition_kr: s.definition_kr ?? '',
+      definition_fr: s.definition_fr ?? '',
       synonymes: joindre(s.synonymes),
       termes: joindre(s.termes),
       exemples: (s.exemples ?? []).map((ex, j) => ({ cle: `s${i}e${j}`, kr: ex.kr ?? '', fr: ex.fr ?? '' })),
@@ -42,6 +47,10 @@ function depuisEdition(e) {
     variantes: decouper(e.variantes),
     sens: e.sens.map((s) => ({
       traduction: s.traduction.trim(),
+      categorie: s.categorie.trim(),
+      marque: s.marque.trim(),
+      definition_kr: s.definition_kr.trim(),
+      definition_fr: s.definition_fr.trim(),
       synonymes: decouper(s.synonymes),
       termes: decouper(s.termes),
       exemples: s.exemples.map((ex) => ({ kr: ex.kr.trim(), fr: ex.fr.trim() })),
@@ -145,6 +154,62 @@ export default function EditeurFiche({ ficheInitiale, nom = 'donnees', mode = 'p
               style={{ minHeight: 60 }}
             />
           </div>
+
+          <div className="champ champ--paire">
+            <div>
+              <label htmlFor={`${id}-cat-${s.cle}`}>
+                {l.categorie} <span className="champ__facultatif">({l.facultatif})</span>
+              </label>
+              <input
+                id={`${id}-cat-${s.cle}`}
+                className="saisie"
+                list={`${id}-categories`}
+                value={s.categorie}
+                onChange={(e) => majSens(i, 'categorie', e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor={`${id}-marque-${s.cle}`}>
+                {l.marque} <span className="champ__facultatif">({l.facultatif})</span>
+              </label>
+              <input
+                id={`${id}-marque-${s.cle}`}
+                className="saisie"
+                list={`${id}-marques`}
+                value={s.marque}
+                onChange={(e) => majSens(i, 'marque', e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="champ">
+            <label htmlFor={`${id}-defkr-${s.cle}`}>
+              {l.definitionKr} <span className="champ__facultatif">({l.facultatif})</span>
+            </label>
+            <textarea
+              id={`${id}-defkr-${s.cle}`}
+              className="saisie"
+              rows={2}
+              value={s.definition_kr}
+              onChange={(e) => majSens(i, 'definition_kr', e.target.value)}
+              style={{ minHeight: 56 }}
+            />
+            <p className="champ__aide">{l.definitionAide}</p>
+          </div>
+
+          <div className="champ">
+            <label htmlFor={`${id}-deffr-${s.cle}`}>
+              {l.definitionFr} <span className="champ__facultatif">({l.facultatif})</span>
+            </label>
+            <textarea
+              id={`${id}-deffr-${s.cle}`}
+              className="saisie"
+              rows={2}
+              value={s.definition_fr}
+              onChange={(e) => majSens(i, 'definition_fr', e.target.value)}
+              style={{ minHeight: 56 }}
+            />
+          </div>
           <div className="champ">
             <span className="champ__libelle">
               {l.exemple} <span className="champ__facultatif">({l.facultatif})</span>
@@ -212,7 +277,7 @@ export default function EditeurFiche({ ficheInitiale, nom = 'donnees', mode = 'p
       <button
         type="button"
         className="bouton-ajout"
-        onClick={() => maj((e) => ({ ...e, sens: [...e.sens, { cle: cle(), traduction: '', synonymes: '', termes: '', exemples: [] }] }))}
+        onClick={() => maj((e) => ({ ...e, sens: [...e.sens, { cle: cle(), traduction: '', categorie: '', marque: '', definition_kr: '', definition_fr: '', synonymes: '', termes: '', exemples: [] }] }))}
       >
         <IconePlus taille={18} /> {l.ajouterSens}
       </button>
@@ -261,6 +326,18 @@ export default function EditeurFiche({ ficheInitiale, nom = 'donnees', mode = 'p
           <IconePlus taille={18} /> {l.ajouterLocution}
         </button>
       </div>
+
+      {/* Valeurs proposées, jamais imposées : on peut toujours en saisir une autre */}
+      <datalist id={`${id}-categories`}>
+        {CATEGORIES.map((c) => (
+          <option key={c} value={c} />
+        ))}
+      </datalist>
+      <datalist id={`${id}-marques`}>
+        {MARQUES.map((m) => (
+          <option key={m} value={m} />
+        ))}
+      </datalist>
     </div>
   );
 }

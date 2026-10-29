@@ -39,6 +39,10 @@ CREATE TABLE IF NOT EXISTS sens (
   entree_id   INT UNSIGNED NOT NULL,
   num         SMALLINT UNSIGNED NOT NULL,
   traduction  TEXT NOT NULL,
+  categorie   VARCHAR(40) NULL,
+  marque      VARCHAR(60) NULL,
+  definition_kr TEXT NULL,
+  definition_fr TEXT NULL,
   recherche   TEXT NOT NULL,
   PRIMARY KEY (id),
   KEY idx_sens_entree (entree_id, num),
@@ -294,4 +298,36 @@ CREATE TABLE IF NOT EXISTS admin_audit (
   INDEX idx_audit_action (action, created_at),
   INDEX idx_audit_cible (cible_type, cible_id),
   CONSTRAINT fk_audit_user FOREIGN KEY (user_id) REFERENCES admin_users(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ---------------------------------------------------------------------------
+-- Mesures : des compteurs, jamais des personnes
+-- ---------------------------------------------------------------------------
+
+-- Mokaché : aucun identifiant, aucune adresse IP, aucun cookie
+CREATE TABLE IF NOT EXISTS jeu_stats (
+  jour       DATE NOT NULL,
+  commencees INT UNSIGNED NOT NULL DEFAULT 0,
+  terminees  INT UNSIGNED NOT NULL DEFAULT 0,
+  gagnees    INT UNSIGNED NOT NULL DEFAULT 0,
+  coups1     INT UNSIGNED NOT NULL DEFAULT 0,
+  coups2     INT UNSIGNED NOT NULL DEFAULT 0,
+  coups3     INT UNSIGNED NOT NULL DEFAULT 0,
+  coups4     INT UNSIGNED NOT NULL DEFAULT 0,
+  coups5     INT UNSIGNED NOT NULL DEFAULT 0,
+  coups6     INT UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (jour)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Recherches restées sans résultat : le mot cherché, jamais qui l'a cherché
+CREATE TABLE IF NOT EXISTS recherches_vides (
+  id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  terme       VARCHAR(190) NOT NULL,
+  direction   ENUM('kr','fr') NOT NULL,
+  occurrences INT UNSIGNED NOT NULL DEFAULT 1,
+  premiere    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  derniere    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  traite      TINYINT(1) NOT NULL DEFAULT 0,
+  UNIQUE KEY uq_recherche (terme, direction),
+  KEY idx_recherches_frequence (traite, occurrences)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

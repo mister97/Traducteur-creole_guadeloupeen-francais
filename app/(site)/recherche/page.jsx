@@ -5,6 +5,7 @@ import Pagination from '@/components/Pagination';
 import Recherche from '@/components/Recherche';
 import Surligne from '@/components/Surligne';
 import { compterAutreSens, rechercherFrancais, rechercherKreyol } from '@/lib/dico';
+import { noterRechercheVide } from '@/lib/statistiques';
 import { textes } from '@/lib/langue';
 import { f, formaterNombre } from '@/lib/textes';
 
@@ -36,6 +37,12 @@ export default async function PageRecherche({ searchParams }) {
     : null;
   const autreDirection = direction === 'kr' ? 'fr' : 'kr';
   const autres = q && donnees.total === 0 ? await compterAutreSens(q, direction) : 0;
+
+  // Mot introuvable dans les deux sens : c'est une lacune du dictionnaire, pas
+  // une erreur de direction. On retient le mot cherché, jamais qui l'a cherché.
+  if (q && page === 1 && donnees.total === 0 && autres === 0) {
+    await noterRechercheVide(q, direction);
+  }
   const totalPages = donnees ? Math.ceil(donnees.total / PAR_PAGE) : 0;
   const lienPage = (n) => `/recherche?q=${encodeURIComponent(q)}&dir=${direction}${n > 1 ? `&page=${n}` : ''}`;
 

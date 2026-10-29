@@ -87,6 +87,15 @@ Toutes les actions qui modifient quelque chose, ainsi que les connexions, sont i
 
 Garde-fous : verrouillage du compte après 5 échecs pendant 15 minutes, message de connexion identique que le compte existe ou non, liens d'invitation et de réinitialisation à usage unique dont seule l'empreinte est en base, et fermeture de toutes les sessions dès qu'un mot de passe change ou qu'un compte est suspendu.
 
+## Statistiques
+
+Le site ne pose aucun traceur. Deux compteurs anonymes alimentent **/admin/statistiques** :
+
+- le **Mokaché** — parties commencées, terminées, gagnées et en combien de coups. `/api/jeu` connaît déjà l'issue de chaque partie : il ne fait que la retenir, sans identifiant, sans adresse IP, sans cookie ;
+- les **recherches sans résultat** — le mot cherché quand il ne donne rien *ni en créole ni en français*, avec un bouton pour créer la fiche directement. C'est la liste des mots à ajouter, écrite par les visiteurs.
+
+Pour les visites, Plesk tient déjà des statistiques Apache : rien à installer.
+
 ## Avant-lancement
 
 `DATE_LANCEMENT` (date ISO avec décalage, ex. `2026-10-28T00:00:00-04:00`) ferme le site public derrière un décompte jusqu'à la date indiquée, puis se lève seule. L'administration reste accessible, et une personne connectée voit le site normalement. Variable absente ou vide : aucun rideau.

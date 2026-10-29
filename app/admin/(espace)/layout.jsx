@@ -2,12 +2,17 @@ import Link from 'next/link';
 import NavAdmin from '@/components/admin/NavAdmin';
 import { exigerAdmin } from '@/lib/auth';
 import { compterDemandes } from '@/lib/acces';
+import { compterRecherchesVides } from '@/lib/statistiques';
 import { compterSuggestions } from '@/lib/suggestions';
 import { deconnexion } from '../actions';
 
 export default async function EspaceAdminLayout({ children }) {
   const moi = await exigerAdmin();
-  const [{ en_attente: enAttente }, demandes] = await Promise.all([compterSuggestions(), compterDemandes()]);
+  const [{ en_attente: enAttente }, demandes, lacunes] = await Promise.all([
+    compterSuggestions(),
+    compterDemandes(),
+    compterRecherchesVides(),
+  ]);
 
   return (
     <div className="admin">
@@ -20,7 +25,7 @@ export default async function EspaceAdminLayout({ children }) {
             <small>Administration</small>
           </span>
         </Link>
-        <NavAdmin enAttente={enAttente} demandesEnAttente={demandes.pending} proprietaire={moi.role === 'proprietaire'} />
+        <NavAdmin enAttente={enAttente} demandesEnAttente={demandes.pending} lacunes={lacunes.a_traiter} proprietaire={moi.role === 'proprietaire'} />
         <div className="admin__bas">
           <Link href="/admin/compte" className="admin__lien admin__moi">
             <strong>{moi.name}</strong>

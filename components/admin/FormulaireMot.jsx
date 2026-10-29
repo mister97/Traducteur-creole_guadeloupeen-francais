@@ -6,7 +6,9 @@ import { enregistrerMot } from '@/app/admin/actions';
 import EditeurFiche from '@/components/EditeurFiche';
 import { TEXTES } from '@/lib/textes';
 
-export default function FormulaireMot({ entree }) {
+// motInitial : arrive de /admin/statistiques, pour créer la fiche d'un mot qu'on
+// vous a demandé sans avoir à le retaper.
+export default function FormulaireMot({ entree, motInitial }) {
   const [etat, action, enCours] = useActionState(enregistrerMot, null);
   const slug = etat?.slug ?? entree?.slug;
 
@@ -31,7 +33,12 @@ export default function FormulaireMot({ entree }) {
       )}
 
       <div className="carte admin-bloc">
-        <EditeurFiche key={entree?.modifie_le ?? 'nouveau'} ficheInitiale={entree?.fiche} mode="admin" l={TEXTES.fr.proposer} />
+        <EditeurFiche
+          key={entree?.modifie_le ?? 'nouveau'}
+          ficheInitiale={entree?.fiche ?? (motInitial ? { mot: motInitial } : undefined)}
+          mode="admin"
+          l={TEXTES.fr.proposer}
+        />
       </div>
 
       <div className="carte admin-bloc" style={{ marginTop: 20 }}>

@@ -32,7 +32,7 @@ export default async function Confidentialite() {
       </header>
 
       <p>
-        Chalviraj ne fait ni publicité, ni mesure d’audience, et n’utilise aucun traceur tiers. Cette page explique quelles données sont
+        Chalviraj ne fait ni publicité, ni mesure d’audience, et n’utilise aucun traceur tiers : nous ne savons ni qui vous êtes, ni combien vous êtes, ni d’où vous venez. Les seuls chiffres tenus sont deux compteurs anonymes, décrits ci-dessous, qui ne permettent de reconnaître personne. Cette page explique quelles données sont
         traitées quand vous utilisez le site, pourquoi, et comment exercer vos droits.
       </p>
 
@@ -60,6 +60,26 @@ export default async function Confidentialite() {
               <td>Faire fonctionner le site et le protéger des abus</td>
               <td>Intérêt légitime</td>
               <td>{CONSERVATION.journauxMois} mois maximum</td>
+            </tr>
+            <tr>
+              <td>Partie de Mokaché</td>
+              <td>
+                Des compteurs par jour : parties commencées, terminées, gagnées, et en combien de coups. Aucun identifiant, aucune
+                adresse IP, aucun cookie — rien qui permette de savoir qui a joué.
+              </td>
+              <td>Savoir si le jeu est trop difficile et l’ajuster</td>
+              <td>Intérêt légitime</td>
+              <td>Conservés sans limite : ce sont des totaux, pas des données personnelles</td>
+            </tr>
+            <tr>
+              <td>Recherche sans résultat</td>
+              <td>
+                Le mot cherché, quand il ne donne aucun résultat ni en créole ni en français, et le nombre de fois qu’il a été
+                demandé. Le mot est conservé, jamais qui l’a cherché.
+              </td>
+              <td>Savoir quels mots manquent au dictionnaire et les ajouter</td>
+              <td>Intérêt légitime</td>
+              <td>Jusqu’à ce que le mot soit traité</td>
             </tr>
             <tr>
               <td>Administration du site</td>

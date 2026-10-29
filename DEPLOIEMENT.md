@@ -191,6 +191,7 @@ Depuis octobre 2026, `db:init` tient la liste des migrations déjà appliquées 
 | `2026-10-05-api-partenaires.sql` | API publique et espace partenaire : `partners`, `api_keys`, `api_requests`, `api_usage_daily`, `access_requests`, `auth_tokens`, `terms_acceptances` |
 | `2026-10-06-export-complet.sql` | Autorisation d'export complet par partenaire (`partners.export_autorise`) |
 | `2026-10-19-comptes-admin.sql` | Comptes nominatifs de l'administration et journal des actions : `admin_users`, `admin_tokens`, `admin_audit` |
+| `2026-10-29-definitions-et-mesures.sql` | Définition, marque d'usage et catégorie grammaticale par sens ; compteurs du Mokaché (`jeu_stats`) et recherches sans résultat (`recherches_vides`) |
 
 ## Tâche planifiée : usage de l'API
 
