@@ -4,7 +4,7 @@ import BoutonConfirmation from '@/components/admin/BoutonConfirmation';
 import { dateHeure } from '@/components/admin/utils';
 import { exigerAdmin } from '@/lib/auth';
 import { formaterJour } from '@/lib/dates';
-import { compterRecherchesVides, listerRecherchesVides, statsJeu } from '@/lib/statistiques';
+import { compterRecherchesVides, listerRecherchesVides, purgerEmpreintes, statsJeu, statsVisites } from '@/lib/statistiques';
 import { formaterNombre } from '@/lib/textes';
 
 export const metadata = { title: 'Statistiques' };
@@ -16,7 +16,9 @@ export default async function PageStatistiques({ searchParams }) {
   const p = await searchParams;
   const traite = p.traite === '1';
 
-  const [{ lignes, total }, recherches, compte] = await Promise.all([
+  await purgerEmpreintes();
+  const [visites, { lignes, total }, recherches, compte] = await Promise.all([
+    statsVisites({ jours: 30 }),
     statsJeu({ jours: 30 }),
     listerRecherchesVides({ traite, limite: 120 }),
     compterRecherchesVides(),
@@ -28,15 +30,79 @@ export default async function PageStatistiques({ searchParams }) {
     <>
       <h1 className="admin__titre">Statistiques</h1>
       <p className="admin__sous-titre">
-        Des compteurs, jamais des personnes : ni identifiant, ni adresse IP, ni cookie. Un joueur qui recharge et rejoue compte deux
-        fois — ces chiffres donnent une tendance, pas un décompte de personnes. Pour les visites, Plesk tient déjà des statistiques
-        Apache.
+        Aucun cookie, aucune adresse IP conservée. Les visiteurs sont comptés par une empreinte qui change chaque jour : on sait
+        combien de personnes sont venues aujourd’hui, jamais si l’une d’elles était déjà là hier. Les robots d’indexation sont
+        écartés.
       </p>
 
       {p.ok && <div className="alerte alerte--succes">Enregistré.</div>}
 
       {/* ------------------------------------------------------------- */}
       <h2 className="section__titre" style={{ fontSize: '1.2rem' }}>
+        Fréquentation — 30 derniers jours
+      </h2>
+
+      <div className="chiffres">
+        <div className="chiffre">
+          <strong>{formaterNombre(visites.total.visiteurs)}</strong>
+          <span>visiteurs</span>
+        </div>
+        <div className="chiffre">
+          <strong>{formaterNombre(visites.total.pages)}</strong>
+          <span>pages vues (au moins)</span>
+        </div>
+        <div className="chiffre">
+          <strong>{visites.total.visiteurs ? (visites.total.pages / visites.total.visiteurs).toFixed(1) : '0'}</strong>
+          <span>pages par visiteur</span>
+        </div>
+        <div className="chiffre">
+          <strong>{formaterNombre(Math.round(visites.total.visiteurs / Math.max(1, visites.lignes.length)))}</strong>
+          <span>visiteurs par jour</span>
+        </div>
+      </div>
+
+      <p className="tableau__discret" style={{ marginTop: -6 }}>
+        Le nombre de <strong>visiteurs est exact</strong> : l’arrivée sur le site passe toujours par le serveur. Les{' '}
+        <strong>pages vues sont un minimum</strong> : quand le navigateur a déjà préchargé une page au survol du lien, l’ouvrir
+        ensuite ne redemande rien au serveur. Mieux vaut manquer des pages réellement lues que compter des pages que personne n’a
+        ouvertes.
+      </p>
+
+      {visites.lignes.length === 0 ? (
+        <div className="carte">
+          <p className="tableau__discret" style={{ margin: 0 }}>
+            Aucune visite enregistrée pour l’instant.
+          </p>
+        </div>
+      ) : (
+        <div className="tableau-conteneur">
+          <table className="tableau">
+            <thead>
+              <tr>
+                <th>Jour</th>
+                <th>Visiteurs</th>
+                <th>Pages vues (au moins)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visites.lignes.map((v) => (
+                <tr key={v.jour}>
+                  <td className="tableau__discret" style={{ whiteSpace: 'nowrap' }}>
+                    {formaterJour(v.jour, 'fr', { annee: true })}
+                  </td>
+                  <td>
+                    <strong>{formaterNombre(v.visiteurs)}</strong>
+                  </td>
+                  <td className="tableau__discret">{formaterNombre(v.pages)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {/* ------------------------------------------------------------- */}
+      <h2 className="section__titre" style={{ fontSize: '1.2rem', marginTop: 40 }}>
         Mokaché — 30 derniers jours
       </h2>
 
@@ -120,11 +186,11 @@ export default async function PageStatistiques({ searchParams }) {
 
       {/* ------------------------------------------------------------- */}
       <h2 className="section__titre" style={{ fontSize: '1.2rem', marginTop: 40 }}>
-        Mots qu’on vous demande et que vous n’avez pas
+        Mots recherchés et absents du dico
       </h2>
       <p className="tableau__discret" style={{ marginTop: -6 }}>
-        Recherches restées sans résultat <strong>dans les deux sens</strong> — ni en créole, ni en français. C’est la liste des mots à
-        ajouter, écrite par les visiteurs. Seul le mot cherché est conservé.
+        Recherches restées sans résultat <strong>dans les deux sens</strong> — ni en créole, ni en français. Seul le mot cherché est
+        conservé.
       </p>
 
       <nav className="onglets">

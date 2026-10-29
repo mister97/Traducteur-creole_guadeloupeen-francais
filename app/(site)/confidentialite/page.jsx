@@ -32,7 +32,7 @@ export default async function Confidentialite() {
       </header>
 
       <p>
-        Chalviraj ne fait ni publicité, ni mesure d’audience, et n’utilise aucun traceur tiers : nous ne savons ni qui vous êtes, ni combien vous êtes, ni d’où vous venez. Les seuls chiffres tenus sont deux compteurs anonymes, décrits ci-dessous, qui ne permettent de reconnaître personne. Cette page explique quelles données sont
+        Chalviraj ne fait pas de publicité, ne pose aucun cookie de suivi et n’utilise aucun traceur tiers : rien de ce que vous faites ici n’est transmis à Google, à Meta ou à qui que ce soit. Nous comptons en revanche nos visiteurs, nous-mêmes et sans conserver d’adresse IP — comment, c’est expliqué ci-dessous. Cette page explique quelles données sont
         traitées quand vous utilisez le site, pourquoi, et comment exercer vos droits.
       </p>
 
@@ -60,6 +60,20 @@ export default async function Confidentialite() {
               <td>Faire fonctionner le site et le protéger des abus</td>
               <td>Intérêt légitime</td>
               <td>{CONSERVATION.journauxMois} mois maximum</td>
+            </tr>
+            <tr>
+              <td>Visite d’une page</td>
+              <td>
+                Un compteur de visiteurs et de pages vues, par jour. Votre adresse IP et votre navigateur sont transformés en une
+                empreinte illisible qui <strong>change chaque jour</strong> : elle sert à ne pas vous compter deux fois dans la
+                journée, et ne permet pas de savoir si vous étiez déjà venu la veille. L’adresse IP elle-même n’est jamais
+                enregistrée, et aucun cookie n’est posé. Les robots d’indexation ne sont pas comptés.
+              </td>
+              <td>Savoir si le dictionnaire est consulté, et combien</td>
+              <td>Intérêt légitime</td>
+              <td>
+                Empreintes effacées après {CONSERVATION.empreinteIpJours} jours ; seuls les totaux du jour sont conservés
+              </td>
             </tr>
             <tr>
               <td>Partie de Mokaché</td>

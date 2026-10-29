@@ -331,3 +331,17 @@ CREATE TABLE IF NOT EXISTS recherches_vides (
   UNIQUE KEY uq_recherche (terme, direction),
   KEY idx_recherches_frequence (traite, occurrences)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Comptage des visiteurs : empreinte journalière, jamais d'adresse IP conservée
+CREATE TABLE IF NOT EXISTS visites (
+  jour      DATE     NOT NULL,
+  empreinte CHAR(64) NOT NULL,
+  PRIMARY KEY (jour, empreinte)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS visites_jour (
+  jour      DATE NOT NULL,
+  visiteurs INT UNSIGNED NOT NULL DEFAULT 0,
+  pages     INT UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (jour)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
