@@ -2217,3 +2217,17 @@ pre code {
   padding-left: 12px;
   text-wrap: pretty;
 }
+
+/* La traduction porte les liens vers l'index français */
+.lien-traduction {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--sable);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.lien-traduction:hover,
+.lien-traduction:focus-visible {
+  text-decoration-color: var(--turquoise);
+}

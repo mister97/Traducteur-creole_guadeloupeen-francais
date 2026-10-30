@@ -269,7 +269,10 @@ export default function EditeurFiche({ ficheInitiale, nom = 'donnees', mode = 'p
                   Générer
                 </button>
               </div>
-              <p className="champ__aide">Séparés par des virgules. « Générer » découpe la traduction.</p>
+              <p className="champ__aide">
+                Laissez vide : ils seront déduits de la traduction. À remplir seulement pour ajouter un mot qui n’y figure pas, afin
+                qu’on trouve quand même la fiche en le cherchant.
+              </p>
             </div>
           )}
         </div>

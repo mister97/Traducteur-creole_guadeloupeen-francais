@@ -9,6 +9,7 @@ import { lettreDe, lettreValide } from '@/lib/alphabet';
 import { rechercheKreyol } from '@/lib/normalisation.mjs';
 import { SITE_URL } from '@/lib/site';
 import { f } from '@/lib/textes';
+import TraductionLiee, { termesEnPlus } from '@/components/TraductionLiee';
 
 // cache() : une seule lecture en base pour generateMetadata et la page
 const ficheEnCache = cache((slug) => ficheParSlug(slug));
@@ -95,7 +96,7 @@ export default async function PageMot({ params }) {
                         {s.marque && <span className="etiquette etiquette--marque">{s.marque}</span>}
                       </p>
                     )}
-                    {s.traduction && <p className="sens-detail__traduction">{s.traduction}</p>}
+                    <TraductionLiee traduction={s.traduction} termes={s.termes} />
                     {s.definition_kr && (
                       <p className="sens-detail__definition" lang="gcf">
                         {s.definition_kr}
@@ -132,11 +133,11 @@ export default async function PageMot({ params }) {
                         </div>
                       </div>
                     )}
-                    {s.termes.length > 0 && (
+                    {termesEnPlus(s.traduction, s.termes).length > 0 && (
                       <div className="sens-detail__ligne">
                         <span className="sens-detail__libelle">{t.fiche.termesFr}</span>
                         <div className="puces">
-                          {s.termes.map((terme) => (
+                          {termesEnPlus(s.traduction, s.termes).map((terme) => (
                             <Link key={terme.slug} className="puce puce--fr" href={`/fr/${terme.slug}`}>
                               {terme.terme}
                             </Link>
