@@ -31,8 +31,8 @@ export default async function PageStatistiques({ searchParams }) {
       <h1 className="admin__titre">Statistiques</h1>
       <p className="admin__sous-titre">
         Aucun cookie, aucune adresse IP conservée. Les visiteurs sont comptés par une empreinte qui change chaque jour : on sait
-        combien de personnes sont venues aujourd’hui, jamais si l’une d’elles était déjà là hier. Les robots d’indexation sont
-        écartés.
+        combien de personnes sont venues aujourd’hui, jamais si l’une d’elles était déjà là hier. Les robots d’indexation sont écartés, et
+        vos propres passages sur le site ne sont pas comptés tant que vous êtes connecté ici.
       </p>
 
       {p.ok && <div className="alerte alerte--succes">Enregistré.</div>}

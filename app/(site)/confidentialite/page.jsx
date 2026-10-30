@@ -67,7 +67,7 @@ export default async function Confidentialite() {
                 Un compteur de visiteurs et de pages vues, par jour. Votre adresse IP et votre navigateur sont transformés en une
                 empreinte illisible qui <strong>change chaque jour</strong> : elle sert à ne pas vous compter deux fois dans la
                 journée, et ne permet pas de savoir si vous étiez déjà venu la veille. L’adresse IP elle-même n’est jamais
-                enregistrée, et aucun cookie n’est posé. Les robots d’indexation ne sont pas comptés.
+                enregistrée, et aucun cookie n’est posé. Ni les robots d’indexation, ni les personnes connectées à l’administration du site ne sont comptés.
               </td>
               <td>Savoir si le dictionnaire est consulté, et combien</td>
               <td>Intérêt légitime</td>
