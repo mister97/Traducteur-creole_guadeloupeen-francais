@@ -81,6 +81,7 @@ export async function enregistrerMot(_etat, formData) {
       slug: champ(formData, 'slug') || undefined,
       exclu_quotidien: formData.get('exclu_quotidien') === 'on',
       exclu_jeu: formData.get('exclu_jeu') === 'on',
+      francise: formData.get('francise') === 'on',
     });
   } catch (erreur) {
     if (erreur instanceof ErreurFiche) return { erreur: erreur.message };
@@ -124,6 +125,8 @@ export async function validerSuggestion(_etat, formData) {
         id: Number(champ(formData, 'entree_cible')) || null,
         exclu_quotidien: formData.get('exclu_quotidien') === 'on',
         exclu_jeu: formData.get('exclu_jeu') === 'on',
+        francise: formData.get('francise') === 'on',
+      francise: formData.get('francise') === 'on',
       });
     } catch (erreur) {
       if (erreur instanceof ErreurFiche) return { erreur: erreur.message };

@@ -87,6 +87,10 @@ Toutes les actions qui modifient quelque chose, ainsi que les connexions, sont i
 
 Garde-fous : verrouillage du compte après 5 échecs pendant 15 minutes, message de connexion identique que le compte existe ou non, liens d'invitation et de réinitialisation à usage unique dont seule l'empreinte est en base, et fermeture de toutes les sessions dès qu'un mot de passe change ou qu'un compte est suspendu.
 
+## Mots francisés
+
+Une case **« Mot francisé »** sur la fiche d'un mot (et non sur un sens : un emprunt l'est quel que soit son sens). Quand elle est cochée, la fiche publique affiche une pastille et reformule les synonymes en **« On di pito »**, pour faire découvrir les équivalents créoles sans reprendre personne. Le filtre *Mots francisés* dans `/admin/mots` permet de les revoir ensemble. L'API les expose sous `borrowed_from_french`.
+
 ## Statistiques
 
 Le site ne pose aucun traceur. Deux compteurs anonymes alimentent **/admin/statistiques** :

@@ -2231,3 +2231,21 @@ pre code {
 .lien-traduction:focus-visible {
   text-decoration-color: var(--turquoise);
 }
+
+/* Mot emprunté au français : on informe, on ne corrige personne */
+.fiche__francise {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 0;
+  color: var(--encre-2);
+  font-size: 0.95rem;
+}
+
+.etiquette--francise {
+  background: var(--blanc);
+  border: 2px solid var(--corail);
+  color: #a8431f;
+  white-space: nowrap;
+}

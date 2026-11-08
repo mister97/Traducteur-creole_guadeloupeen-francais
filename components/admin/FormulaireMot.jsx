@@ -58,6 +58,13 @@ export default function FormulaireMot({ entree, motInitial }) {
               <input type="checkbox" name="exclu_jeu" defaultChecked={Boolean(entree?.exclu_jeu)} />
               Exclure du jeu Mokaché
             </label>
+            <label className="case">
+              <input type="checkbox" name="francise" defaultChecked={Boolean(entree?.francise)} />
+              Mot francisé
+            </label>
+            <p className="champ__aide" style={{ margin: 0 }}>
+              Emprunt au français, employé couramment. La fiche l’indique et met en avant les synonymes créoles sous « On di pito ».
+            </p>
           </div>
         </div>
       </div>

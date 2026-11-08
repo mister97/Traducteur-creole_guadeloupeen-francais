@@ -14,13 +14,15 @@ export const dynamic = 'force-dynamic';
 const TABLES_ATTENDUES = [
   'entrees', 'formes', 'sens', 'exemples', 'synonymes', 'locutions', 'fr_termes', 'fr_renvois',
   'quotidien', 'suggestions', 'access_requests', 'partners', 'api_keys', 'api_requests',
-  'api_usage_daily', 'auth_tokens', 'terms_acceptances', 'admin_users', 'admin_tokens', 'admin_audit',
+  'api_usage_daily', 'auth_tokens', 'terms_acceptances', 'admin_users', 'admin_tokens', 'admin_audit', 'jeu_stats', 'recherches_vides', 'visites', 'visites_jour',
 ];
 const COLONNES_ATTENDUES = [
   ['suggestions', 'consent_license'],
   ['suggestions', 'consent_at'],
   ['partners', 'export_autorise'],
   ['exemples', 'sens_id'],
+  ['sens', 'definition_kr'],
+  ['entrees', 'francise'],
 ];
 
 export async function GET() {

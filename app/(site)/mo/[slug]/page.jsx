@@ -77,6 +77,12 @@ export default async function PageMot({ params }) {
           </ol>
 
           <h1 className="fiche__mot">{fiche.mot}</h1>
+          {fiche.francise && (
+            <p className="fiche__francise">
+              <span className="etiquette etiquette--francise">{t.fiche.francise}</span>
+              <span>{t.fiche.franciseTexte}</span>
+            </p>
+          )}
           {fiche.variantes.length > 0 && (
             <p className="fiche__variantes">
               {t.fiche.variantes} : <strong>{fiche.variantes.join(', ')}</strong>
@@ -125,7 +131,7 @@ export default async function PageMot({ params }) {
                     )}
                     {s.synonymes.length > 0 && (
                       <div className="sens-detail__ligne">
-                        <span className="sens-detail__libelle">{t.fiche.synonymes}</span>
+                        <span className="sens-detail__libelle">{fiche.francise ? t.fiche.plutot : t.fiche.synonymes}</span>
                         <div className="puces">
                           {s.synonymes.map((sy, i) => (
                             <Synonyme key={i} s={sy} />
