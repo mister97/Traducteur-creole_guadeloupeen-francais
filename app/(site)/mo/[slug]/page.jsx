@@ -10,6 +10,7 @@ import { rechercheKreyol } from '@/lib/normalisation.mjs';
 import { SITE_URL } from '@/lib/site';
 import { f } from '@/lib/textes';
 import TraductionLiee, { termesEnPlus } from '@/components/TraductionLiee';
+import ListeExpressions from '@/components/ListeExpressions';
 
 // cache() : une seule lecture en base pour generateMetadata et la page
 const ficheEnCache = cache((slug) => ficheParSlug(slug));
@@ -160,20 +161,7 @@ export default async function PageMot({ params }) {
           )}
 
           {fiche.locutions.length > 0 && (
-            <>
-              <h2 className="fiche__section-titre">{t.fiche.locutions}</h2>
-              {fiche.locutions.map((l, i) => (
-                <div key={i} className="locution">
-                  <div className="locution__expression">{l.expression}</div>
-                  {l.traduction && <div className="locution__traduction">{l.traduction}</div>}
-                  {l.exemple_kr && (
-                    <p className="locution__exemple">
-                      « {l.exemple_kr} »{l.exemple_fr && <span>{l.exemple_fr}</span>}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </>
+            <ListeExpressions locutions={fiche.locutions} titre={t.fiche.locutions} l={t.fiche} />
           )}
 
           {fiche.voirAussi.length > 0 && (
