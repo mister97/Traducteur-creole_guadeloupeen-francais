@@ -1,4 +1,4 @@
-# ai.txt — Chalviraj Kréyòl Gwadloupéyen
+# ai.txt : Chalviraj Kréyòl Gwadloupéyen
 # https://chalviraj.com
 
 Les données de ce dictionnaire (entrées, traductions, exemples, catégories
@@ -22,7 +22,7 @@ FacebookBot, Amazonbot, cohere-ai, Diffbot, Omgilibot, ImagesiftBot.
 Un usage non commercial (recherche, enseignement, projet associatif) est
 bienvenu, à condition de citer la source :
 
-Chalviraj Kréyòl Gwadloupéyen — https://chalviraj.com — CC BY-NC-SA 4.0
+Chalviraj Kréyòl Gwadloupéyen · https://chalviraj.com · CC BY-NC-SA 4.0
 
 Demande de dérogation ou d'accès à l'API :
 https://chalviraj.com/api

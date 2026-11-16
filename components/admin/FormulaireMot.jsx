@@ -47,7 +47,7 @@ export default function FormulaireMot({ entree, motInitial }) {
           <div className="champ">
             <label htmlFor="slug">Adresse de la fiche</label>
             <input id="slug" name="slug" className="saisie" defaultValue={entree?.slug ?? ''} placeholder="générée depuis le mot" />
-            <p className="champ__aide">/mo/… — la changer casse les liens existants.</p>
+            <p className="champ__aide">/mo/…, la changer casse les liens existants.</p>
           </div>
           <div style={{ display: 'grid', gap: 10, alignContent: 'center' }}>
             <label className="case">

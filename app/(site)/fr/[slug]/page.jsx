@@ -59,7 +59,7 @@ export default async function PageTermeFrancais({ params }) {
                     {s.synonymes?.length > 0 && (
                       <span className="resultat__syn">
                         {' '}
-                        — {t.fiche.synonymes} : {s.synonymes.map((sy) => sy.mot).join(', ')}
+                        · {t.fiche.synonymes} : {s.synonymes.map((sy) => sy.mot).join(', ')}
                       </span>
                     )}
                   </span>

@@ -65,7 +65,7 @@ Ajoutez ensuite les **variables d'environnement** (bouton *Variables d'environne
 | `DB_PASSWORD` | le mot de passe de l'étape 2 |
 | `DB_NAME` | `chalviraj` |
 | `DB_SOCKET` | *facultatif* : `/var/run/mysqld/mysqld.sock` pour se connecter par socket local (remplace `DB_HOST`/`DB_PORT`) si l'utilisateur MySQL n'accepte que « localhost » |
-| `SITE_URL` | `https://chalviraj.com` — **l'adresse publique définitive** : c'est elle qui fabrique les liens d'invitation et de réinitialisation envoyés par mail. Si vous y laissez l'adresse de test Plesk, les liens pointeront dessus. |
+| `SITE_URL` | `https://chalviraj.com`, **l'adresse publique définitive** : c'est elle qui fabrique les liens d'invitation et de réinitialisation envoyés par mail. Si vous y laissez l'adresse de test Plesk, les liens pointeront dessus. |
 | `CONTACT_EMAIL` | `kontakt@chalviraj.com` |
 | `SESSION_SECRET` | chaîne aléatoire de 32 caractères minimum : `npm run secret` (à lancer sur votre poste) |
 | `SMTP_HOST` | `ssl0.ovh.net` |
@@ -126,9 +126,9 @@ Dans Plesk › **Node.js** › *Exécuter le script*, ou en SSH depuis le dossie
 npm run admin:creer -- "Prénom Nom" adresse@exemple.fr
 ```
 
-La commande affiche un lien valable 48 heures, utilisable une seule fois : ouvrez-le pour choisir votre mot de passe. Ce lien n'est plus récupérable ensuite — seule son empreinte est conservée en base. S'il se perd, relancez la commande.
+La commande affiche un lien valable 48 heures, utilisable une seule fois : ouvrez-le pour choisir votre mot de passe. Ce lien n'est plus récupérable ensuite : seule son empreinte est conservée en base. S'il se perd, relancez la commande.
 
-Ensuite, tout se passe dans **/admin/utilisateurs** : vous y créez les comptes suivants, qui reçoivent leur invitation par e-mail. Deux rôles existent — *éditeur* (dictionnaire, suggestions, partenaires) et *propriétaire* (en plus : gestion des comptes).
+Ensuite, tout se passe dans **/admin/utilisateurs** : vous y créez les comptes suivants, qui reçoivent leur invitation par e-mail. Deux rôles existent, *éditeur* (dictionnaire, suggestions, partenaires) et *propriétaire* (en plus : gestion des comptes).
 
 ## 5 quater. Fermer le site jusqu'au lancement
 
@@ -142,7 +142,7 @@ DATE_LANCEMENT=2026-10-28T00:00:00-04:00
 
 Tant que cette date n'est pas atteinte :
 
-- le site public affiche un **décompte** à la place de chaque page, en conservant l'adresse demandée — un lien partagé avant l'ouverture fonctionnera après, sans changer ;
+- le site public affiche un **décompte** à la place de chaque page, en conservant l'adresse demandée, un lien partagé avant l'ouverture fonctionnera après, sans changer ;
 - l'**API publique** répond `503 not_launched` en JSON ;
 - l'**administration** reste accessible : connexion, mot de passe oublié, activation de compte, et tout l'espace ;
 - une personne **connectée** voit le site public normalement, avec un bandeau qui le lui rappelle ;

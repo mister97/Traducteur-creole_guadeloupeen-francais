@@ -1,6 +1,6 @@
 **Conditions d'utilisation de l'API du dictionnaire Chalviraj Kréyòl Gwadloupéyen**
 
-Version 1.2 — octobre 2026
+Version 1.2 · octobre 2026
 
 **1. Objet**
 

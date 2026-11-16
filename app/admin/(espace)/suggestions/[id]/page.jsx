@@ -159,9 +159,9 @@ export default async function PageSuggestion({ params, searchParams }) {
               <dt>Reçue</dt>
               <dd>{dateHeure(suggestion.cree_le)}</dd>
               <dt>Nom</dt>
-              <dd>{suggestion.nom || '—'}</dd>
+              <dd>{suggestion.nom || 'non renseigné'}</dd>
               <dt>E-mail</dt>
-              <dd>{suggestion.email ? <a className="lien" href={`mailto:${suggestion.email}`}>{suggestion.email}</a> : '—'}</dd>
+              <dd>{suggestion.email ? <a className="lien" href={`mailto:${suggestion.email}`}>{suggestion.email}</a> : 'non renseignée'}</dd>
               <dt>Prévenir</dt>
               <dd>{suggestion.notifier ? 'oui' : 'non'}</dd>
               <dt>Langue</dt>

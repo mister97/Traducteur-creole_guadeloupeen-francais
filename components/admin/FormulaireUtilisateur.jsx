@@ -86,8 +86,8 @@ export default function FormulaireUtilisateur() {
       <div className="champ">
         <label htmlFor="u-role">Rôle</label>
         <select id="u-role" name="role" className="saisie" value={valeurs.role} onChange={maj('role')}>
-          <option value="editeur">Éditeur — dictionnaire, suggestions, partenaires</option>
-          <option value="proprietaire">Propriétaire — en plus : gestion des comptes</option>
+          <option value="editeur">Éditeur : dictionnaire, suggestions, partenaires</option>
+          <option value="proprietaire">Propriétaire : tout cela, plus la gestion des comptes</option>
         </select>
       </div>
 

@@ -159,7 +159,7 @@ export default function PageApi() {
         chemin="/api/v1/search"
         description="Cherche un mot, en créole ou en français. La recherche ignore la casse et les accents, et classe les correspondances exactes avant les préfixes, puis les occurrences. Les sens sont regroupés par mot."
         parametres={[
-          { nom: 'q', valeurs: 'texte, 1 à 60 caractères (obligatoire)', defaut: '—' },
+          { nom: 'q', valeurs: 'texte, 1 à 60 caractères (obligatoire)', defaut: 'aucun' },
           { nom: 'from', valeurs: 'gcf (créole) ou fr (français)', defaut: 'gcf' },
           { nom: 'limit', valeurs: '1 à 50', defaut: '20' },
           { nom: 'offset', valeurs: '0 à 5000', defaut: '0' },
@@ -181,7 +181,7 @@ export default function PageApi() {
         chemin="/api/v1/updates"
         description="Les entrées créées ou modifiées depuis une date. C’est le point d’entrée à utiliser pour se synchroniser, plutôt que de tout re-télécharger."
         parametres={[
-          { nom: 'since', valeurs: 'date ISO 8601 (obligatoire)', defaut: '—' },
+          { nom: 'since', valeurs: 'date ISO 8601 (obligatoire)', defaut: 'aucun' },
           { nom: 'limit', valeurs: '1 à 100', defaut: '50' },
           { nom: 'offset', valeurs: '0 à 5000', defaut: '0' },
         ]}

@@ -33,7 +33,7 @@ export default async function PageCompte() {
             <ul className="liste-journal">
               {lignes.map((l) => (
                 <li key={l.id}>
-                  <span className="tableau__discret">{dateHeure(l.created_at)}</span> — {libelleAction(l.action)}
+                  <span className="tableau__discret">{dateHeure(l.created_at)}</span> · {libelleAction(l.action)}
                   {l.cible_label ? ` : ${l.cible_label}` : ''}
                 </li>
               ))}

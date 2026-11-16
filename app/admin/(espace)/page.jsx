@@ -96,9 +96,9 @@ export default async function TableauDeBord({ searchParams }) {
           <h2>Aujourd’hui</h2>
           <dl className="meta">
             <dt>Mot du jour</dt>
-            <dd>{motDuJour ? <Link className="lien" href={`/admin/mots/${motDuJour.id}`}>{motDuJour.mot}</Link> : '—'}</dd>
+            <dd>{motDuJour ? <Link className="lien" href={`/admin/mots/${motDuJour.id}`}>{motDuJour.mot}</Link> : 'non tiré'}</dd>
             <dt>Mokaché</dt>
-            <dd>{motJeu ? <Link className="lien" href={`/admin/mots/${motJeu.id}`}>{motJeu.mot}</Link> : '—'}</dd>
+            <dd>{motJeu ? <Link className="lien" href={`/admin/mots/${motJeu.id}`}>{motJeu.mot}</Link> : 'non tiré'}</dd>
           </dl>
           <p style={{ marginTop: 14 }}>
             <Link href="/admin/quotidien" className="bouton bouton--blanc bouton--petit">
@@ -115,7 +115,7 @@ export default async function TableauDeBord({ searchParams }) {
             <ul className="liste-journal">
               {actions.map((a) => (
                 <li key={a.id}>
-                  <span className="tableau__discret">{dateHeure(a.created_at)}</span> — {a.utilisateur_nom ?? 'compte supprimé'} :{' '}
+                  <span className="tableau__discret">{dateHeure(a.created_at)}</span> · {a.utilisateur_nom ?? 'compte supprimé'} :{' '}
                   {libelleAction(a.action)}
                   {a.cible_label ? ` (${a.cible_label})` : ''}
                 </li>

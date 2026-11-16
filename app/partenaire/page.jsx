@@ -130,7 +130,7 @@ async function Tableau({ partenaire, revoquee }) {
         </p>
         <BlocCopiable texte={LICENCE.attribution} libelle="Copier la citation" confirmation="Citation copiée !" />
         <p className="champ__aide">
-          Conditions acceptées : version {acceptation?.terms_version} le {dateHeure(acceptation?.accepted_at)} —{' '}
+          Conditions acceptées : version {acceptation?.terms_version} le {dateHeure(acceptation?.accepted_at)}.{' '}
           <Link className="lien" href="/api/conditions" target="_blank">
             relire le texte
           </Link>

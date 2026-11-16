@@ -95,8 +95,8 @@ Une case **« Mot francisé »** sur la fiche d'un mot (et non sur un sens : un 
 
 Le site ne pose aucun traceur. Deux compteurs anonymes alimentent **/admin/statistiques** :
 
-- le **Mokaché** — parties commencées, terminées, gagnées et en combien de coups. `/api/jeu` connaît déjà l'issue de chaque partie : il ne fait que la retenir, sans identifiant, sans adresse IP, sans cookie ;
-- les **recherches sans résultat** — le mot cherché quand il ne donne rien *ni en créole ni en français*, avec un bouton pour créer la fiche directement. C'est la liste des mots à ajouter, écrite par les visiteurs.
+- le **Mokaché** : parties commencées, terminées, gagnées et en combien de coups. `/api/jeu` connaît déjà l'issue de chaque partie : il ne fait que la retenir, sans identifiant, sans adresse IP, sans cookie ;
+- les **recherches sans résultat** : le mot cherché quand il ne donne rien *ni en créole ni en français*, avec un bouton pour créer la fiche directement. C'est la liste des mots à ajouter, écrite par les visiteurs.
 
 Pour les visites, Plesk tient déjà des statistiques Apache : rien à installer.
 

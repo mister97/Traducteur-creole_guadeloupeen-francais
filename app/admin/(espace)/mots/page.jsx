@@ -78,7 +78,7 @@ export default async function PageMots({ searchParams }) {
                   )}
                 </td>
                 <td>{m.nb_sens}</td>
-                <td className="tableau__discret">{extrait(m.premiere_traduction, 90) || '—'}</td>
+                <td className="tableau__discret">{extrait(m.premiere_traduction, 90) || 'aucune'}</td>
                 <td className="tableau__discret" style={{ whiteSpace: 'nowrap' }}>
                   {dateHeure(m.modifie_le)}
                 </td>

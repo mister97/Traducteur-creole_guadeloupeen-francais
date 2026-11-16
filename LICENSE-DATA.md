@@ -10,7 +10,7 @@ Les données du dictionnaire Chalviraj Kréyòl Gwadloupéyen (entrées, traduct
 Tout réutilisateur doit reproduire cette chaîne d'attribution :
 
 ```
-Chalviraj Kréyòl Gwadloupéyen — https://chalviraj.com — CC BY-NC-SA 4.0
+Chalviraj Kréyòl Gwadloupéyen · https://chalviraj.com · CC BY-NC-SA 4.0
 ```
 
 ## Demandes et signalements

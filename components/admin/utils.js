@@ -6,7 +6,7 @@ export const libelleStatut = (statut) => STATUTS[statut] ?? statut;
 
 // Les dates MySQL arrivent en texte « AAAA-MM-JJ HH:MM:SS » (UTC côté serveur)
 export function dateHeure(valeur) {
-  if (!valeur) return '—';
+  if (!valeur) return 'jamais';
   const d = new Date(`${String(valeur).replace(' ', 'T')}Z`);
   if (Number.isNaN(d.getTime())) return String(valeur);
   return new Intl.DateTimeFormat('fr-FR', {

@@ -103,6 +103,28 @@ export default async function PageRecherche({ searchParams }) {
             </section>
           )}
 
+          {donnees.expressions?.length > 0 && (
+            <section className="section">
+              <h2 className="section__titre">{f(t.recherche.dansExpressions, { q })}</h2>
+              <div className="carte groupe-fr">
+                <ul className="traductions-mots">
+                  {donnees.expressions.map((x, i) => (
+                    <li key={`${x.slug}-${i}`}>
+                      <Link className="traductions-mots__mot" href={`/mo/${x.slug}`}>
+                        <Surligne texte={x.expression} recherche={q} mode={direction} />
+                      </Link>
+                      {x.traduction && (
+                        <span className="traductions-mots__sens">
+                          <Surligne texte={x.traduction} recherche={q} mode="fr" />
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          )}
+
           <Pagination page={page} totalPages={totalPages} lien={lienPage} t={t} />
         </>
       )}

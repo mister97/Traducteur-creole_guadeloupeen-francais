@@ -32,7 +32,7 @@ export default async function Confidentialite() {
       </header>
 
       <p>
-        Chalviraj ne fait pas de publicité, ne pose aucun cookie de suivi et n’utilise aucun traceur tiers : rien de ce que vous faites ici n’est transmis à Google, à Meta ou à qui que ce soit. Nous comptons en revanche nos visiteurs, nous-mêmes et sans conserver d’adresse IP — comment, c’est expliqué ci-dessous. Cette page explique quelles données sont
+        Chalviraj ne fait pas de publicité, ne pose aucun cookie de suivi et n’utilise aucun traceur tiers : rien de ce que vous faites ici n’est transmis à Google, à Meta ou à qui que ce soit. Nous comptons en revanche nos visiteurs, nous-mêmes et sans conserver d’adresse IP, c’est expliqué ci-dessous. Cette page explique quelles données sont
         traitées quand vous utilisez le site, pourquoi, et comment exercer vos droits.
       </p>
 
@@ -79,7 +79,7 @@ export default async function Confidentialite() {
               <td>Partie de Mokaché</td>
               <td>
                 Des compteurs par jour : parties commencées, terminées, gagnées, et en combien de coups. Aucun identifiant, aucune
-                adresse IP, aucun cookie — rien qui permette de savoir qui a joué.
+                adresse IP, aucun cookie, rien qui permette de savoir qui a joué.
               </td>
               <td>Savoir si le jeu est trop difficile et l’ajuster</td>
               <td>Intérêt légitime</td>

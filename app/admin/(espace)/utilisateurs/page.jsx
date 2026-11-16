@@ -96,7 +96,7 @@ export default async function PageUtilisateurs({ searchParams }) {
                     )}
                   </td>
                   <td className="tableau__discret">{u.last_login_at ? dateHeure(u.last_login_at) : 'jamais'}</td>
-                  <td className="tableau__discret">{u.derniere_action ? dateHeure(u.derniere_action) : '—'}</td>
+                  <td className="tableau__discret">{u.derniere_action ? dateHeure(u.derniere_action) : 'aucune'}</td>
                   <td className="tableau__actions">
                     <LienRegenere id={u.id} nom={u.name} premiere={!u.password_hash} />{' '}
                     {!soi && (

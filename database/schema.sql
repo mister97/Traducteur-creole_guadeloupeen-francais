@@ -83,11 +83,14 @@ CREATE TABLE IF NOT EXISTS locutions (
   entree_id   INT UNSIGNED NOT NULL,
   position    SMALLINT UNSIGNED NOT NULL DEFAULT 0,
   expression  VARCHAR(255) NOT NULL,
+  recherche_kr VARCHAR(255) NOT NULL DEFAULT '',
   traduction  TEXT NULL,
+  recherche_fr TEXT NULL,
   exemple_kr  TEXT NULL,
   exemple_fr  TEXT NULL,
   PRIMARY KEY (id),
   KEY idx_loc_entree (entree_id, position),
+  KEY idx_loc_recherche_kr (recherche_kr),
   CONSTRAINT fk_loc_entree FOREIGN KEY (entree_id) REFERENCES entrees (id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

@@ -39,7 +39,7 @@ export default async function PageStatistiques({ searchParams }) {
 
       {/* ------------------------------------------------------------- */}
       <h2 className="section__titre" style={{ fontSize: '1.2rem' }}>
-        Fréquentation — 30 derniers jours
+        Fréquentation des 30 derniers jours
       </h2>
 
       <div className="chiffres">
@@ -103,7 +103,7 @@ export default async function PageStatistiques({ searchParams }) {
 
       {/* ------------------------------------------------------------- */}
       <h2 className="section__titre" style={{ fontSize: '1.2rem', marginTop: 40 }}>
-        Mokaché — 30 derniers jours
+        Mokaché, 30 derniers jours
       </h2>
 
       <div className="chiffres">
@@ -170,7 +170,7 @@ export default async function PageStatistiques({ searchParams }) {
                         {j.mot}
                       </Link>
                     ) : (
-                      <span className="tableau__discret">—</span>
+                      <span className="tableau__discret">non tiré</span>
                     )}
                   </td>
                   <td>{formaterNombre(j.commencees)}</td>
@@ -189,7 +189,7 @@ export default async function PageStatistiques({ searchParams }) {
         Mots recherchés et absents du dico
       </h2>
       <p className="tableau__discret" style={{ marginTop: -6 }}>
-        Recherches restées sans résultat <strong>dans les deux sens</strong> — ni en créole, ni en français. Seul le mot cherché est
+        Recherches restées sans résultat <strong>dans les deux sens</strong>, ni en créole ni en français. Seul le mot cherché est
         conservé.
       </p>
 

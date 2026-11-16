@@ -4,12 +4,12 @@ import { COOKIE_ADMIN, cookiePlausible } from './lib/session';
 
 // Deux rôles, dans cet ordre :
 //
-// 1. Administration — premier filtre seulement : renvoie vers la connexion un
+// 1. Administration, premier filtre seulement : renvoie vers la connexion un
 //    visiteur sans cookie exploitable. Ce n'est PAS la barrière de sécurité :
 //    un cookie forgé passe ici. Chaque page, action et route de /admin appelle
 //    exigerAdmin() (lib/auth.js), qui vérifie la signature et l'état du compte.
 //
-// 2. Rideau d'avant-lancement — le site public affiche un décompte tant que
+// 2. Rideau d'avant-lancement : le site public affiche un décompte tant que
 //    DATE_LANCEMENT n'est pas passée. C'est un rideau, pas un coffre-fort :
 //    il repose sur la simple présence d'un cookie d'administration. Il protège
 //    d'une visite prématurée, pas d'un curieux déterminé.

@@ -61,10 +61,10 @@ export default async function PageSuggestions({ searchParams }) {
                   </td>
                   <td>
                     <Link className="tableau__mot" href={`/admin/suggestions/${s.id}`}>
-                      {s.mot || s.entree_mot || '—'}
+                      {s.mot || s.entree_mot || 'sans mot'}
                     </Link>
                   </td>
-                  <td className="tableau__discret">{extrait(s.message, 80) || '—'}</td>
+                  <td className="tableau__discret">{extrait(s.message, 80) || 'aucun'}</td>
                   <td className="tableau__discret">{s.nom || s.email || 'anonyme'}</td>
                   <td className="tableau__actions">
                     <Link className="bouton bouton--blanc bouton--petit" href={`/admin/suggestions/${s.id}`}>
