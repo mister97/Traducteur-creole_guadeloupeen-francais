@@ -2325,3 +2325,18 @@ pre code {
 .expressions__plus {
   margin-top: 16px;
 }
+
+/* Une expression dans la liste déroulante : elle mène à la fiche de son mot */
+.propositions--expression .propositions__libelle {
+  font-weight: 600;
+}
+
+.propositions--expression .propositions__libelle::before {
+  content: '« ';
+  color: var(--encre-3);
+}
+
+.propositions--expression .propositions__libelle::after {
+  content: ' »';
+  color: var(--encre-3);
+}

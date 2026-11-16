@@ -171,7 +171,7 @@ export default function Recherche({ taille = 'normale', valeurInitiale = '', dir
       {afficherListe && (
         <ul className="propositions" id={idListe} role="listbox">
           {propositions.map((p, i) => (
-            <li key={p.href} id={`${idListe}-${i}`} role="option" aria-selected={i === actif}>
+            <li key={`${p.href}-${i}`} id={`${idListe}-${i}`} role="option" aria-selected={i === actif} className={p.expression ? 'propositions--expression' : undefined}>
               <Link href={p.href} onMouseDown={(e) => e.preventDefault()} onClick={() => setOuvert(false)}>
                 <span className="propositions__libelle">{p.libelle}</span>
                 {p.detail && <span className="propositions__detail">{p.detail}</span>}
