@@ -14,7 +14,8 @@
     "db:init": "node scripts/db-init.mjs",
     "api:agreger": "node scripts/api-agregation.mjs",
     "admin:creer": "node scripts/admin-creer.mjs",
-    "secret": "node scripts/secret.mjs"
+    "secret": "node scripts/secret.mjs",
+    "reparer:fe": "node scripts/reparer-expressions-fe.mjs"
   },
   "dependencies": {
     "@node-rs/argon2": "^2.2.1",

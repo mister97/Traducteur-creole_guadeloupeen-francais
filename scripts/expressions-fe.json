@@ -1,0 +1,692 @@
+[
+ {
+  "expression": "Fè-a-chivé",
+  "traduction": "Fer à décréper / fer à friser les cheveux",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Ayennafè",
+  "traduction": null,
+  "exemple_kr": "I ayennafè",
+  "exemple_fr": "C'est un désoeuvré"
+ },
+ {
+  "expression": "Anvi fè",
+  "traduction": null,
+  "exemple_kr": "Sé dé biten ou anvi fè !",
+  "exemple_fr": "Tu voudrais faire plusieurs choses à la fois, bien sûr !"
+ },
+ {
+  "expression": "Fè alòw",
+  "traduction": null,
+  "exemple_kr": "I fè zanmi a-y alòw",
+  "exemple_fr": "Il a dit bonjour de la main à son ami"
+ },
+ {
+  "expression": "Fè aksidan",
+  "traduction": null,
+  "exemple_kr": "An fè on aksidan",
+  "exemple_fr": "J'ai eu / provoqué un accident"
+ },
+ {
+  "expression": "Fè andèwò",
+  "traduction": null,
+  "exemple_kr": "Jòdla sé andéwò sé péchè-la fè",
+  "exemple_fr": "Aujourd'hui les pêcheurs sont allés au large"
+ },
+ {
+  "expression": "Fè avwè",
+  "traduction": null,
+  "exemple_kr": "Fè mwen avwè on liv sik",
+  "exemple_fr": "Donne-moi une livre de sucre"
+ },
+ {
+  "expression": "Afòsfè",
+  "traduction": null,
+  "exemple_kr": "Afòsfè zò ké rivé about",
+  "exemple_fr": "Vous y parviendrez à force de volonté / de persévérance"
+ },
+ {
+  "expression": "Fè byen",
+  "traduction": "Faire le bien",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè byen",
+  "traduction": "Aller, convenir, réussir",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè bas",
+  "traduction": "Courtiser, flirter",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè bèk",
+  "traduction": null,
+  "exemple_kr": "Doubout pou fè bèk",
+  "exemple_fr": "Debout ! courage ! fais face !"
+ },
+ {
+  "expression": "Fè chif",
+  "traduction": "Faire le difficile",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè chyen",
+  "traduction": "S'aplatir devant quelqu'un, s'abaisser",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè chyen",
+  "traduction": "Produire à profusion",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè cha",
+  "traduction": "S'enfuit, prendre la poudre d'escampette",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè dyèz",
+  "traduction": "Faire du chiqué, des manières",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè dèyè",
+  "traduction": "Battre en retraite (sens propre, sens figuré)",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè on dévé",
+  "traduction": "Effectuer une manœuvre",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè doubout",
+  "traduction": null,
+  "exemple_kr": "I pa ka doubout",
+  "exemple_fr": "Il ne tient pas debout"
+ },
+ {
+  "expression": "Fè dédé",
+  "traduction": "Dire bonjour / dire adieu de la main",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè do won",
+  "traduction": null,
+  "exemple_kr": "I ka fè do won, men i pa dakò",
+  "exemple_fr": "Il fait semblant d'accepter, mais il n'est pas d'accord"
+ },
+ {
+  "expression": "Fè dlo (kaz)",
+  "traduction": "Couler, prendre l'eau (pour une maison)",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè dlo (bouch)",
+  "traduction": "Saliver (pour la bouche)",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè dan",
+  "traduction": "Faire sa dentition (pour un bébé), Débloquer, dérailler, retourner en enfance",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè on fanm",
+  "traduction": "Avoir une touche (pour un homme)",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Las fè",
+  "traduction": "Cesser, arrêter de",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè-y fè-y",
+  "traduction": "Fais-le lui faire",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fo i fè-y",
+  "traduction": "Il faut qu'il le fasse",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fèfò",
+  "traduction": null,
+  "exemple_kr": "Sa pa ka fèfò",
+  "exemple_fr": "Cela n'est pas sérieux"
+ },
+ {
+  "expression": "Fè fanm",
+  "traduction": "Jouer à la femme",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fèfon / Fèfòs",
+  "traduction": "Compter sur",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè gyongyon",
+  "traduction": "Faire de la sorcellerie",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè gòj",
+  "traduction": "Le faire au culot",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè ganm",
+  "traduction": "Faire des manières",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè gnan",
+  "traduction": "Abonder, pulluler",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè gòl",
+  "traduction": "Être gardien de but",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Sa i fè i fè",
+  "traduction": "Advienne que pourra / On verra bien ce qu'il fera",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Sa i fèt fèt",
+  "traduction": "Adieu vat !",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè jaktèl",
+  "traduction": "Faire des manières",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè jé",
+  "traduction": "Se moquer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè jé",
+  "traduction": "Exagérer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè jédjanm",
+  "traduction": "Louvoyer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Ola ou ka fè",
+  "traduction": "Par où passes-tu ?",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Kijan fè ou pòkò rivé ?",
+  "traduction": "Comment se fait-il que tu ne sois pas encore arrivé ?",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kouyon",
+  "traduction": "Faire l'imbécile, faire l'idiot, parader, se faire remarquer, jouer à l'homme supérieur",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kouyonnad",
+  "traduction": "Exagérer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè koudèl",
+  "traduction": "Zigzaguer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè konsi",
+  "traduction": "Faire semblant",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kò",
+  "traduction": "Prendre corps",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kò",
+  "traduction": "se développer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè klima",
+  "traduction": "faire des manières, des façons",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Ou ka fè kò a-w vwè mizè",
+  "traduction": "tu te surmènes trop",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kòd",
+  "traduction": "tirbouchonner",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè on karé",
+  "traduction": "faire un tour",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kòsyè",
+  "traduction": "Prendre un chemin de traverse",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kip",
+  "traduction": "Faire kip / tchip",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè on koul dalo",
+  "traduction": "Manger de la vache enragée",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kim",
+  "traduction": "Mousser",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè konmès",
+  "traduction": "commercer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kyin",
+  "traduction": "gagner un gros lot",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè kyou long",
+  "traduction": "Reculer devant le travail",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lang",
+  "traduction": "Rouler un patin",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lèg",
+  "traduction": "Rouler les mécaniques, faire le mariole, jouer les durs",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "I fè la / I fè pa la",
+  "traduction": "Il est passé par là",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lasanblan",
+  "traduction": "Faire semblant",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lèd",
+  "traduction": "Pleurer, pleurnicher",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lèd",
+  "traduction": "Suinter (pour un cadavre)",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lèd",
+  "traduction": "Être grossier",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lèdmannyè",
+  "traduction": "Faire le mal élevé",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lestonmak",
+  "traduction": "Le faire au culot",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lékòl",
+  "traduction": "Être enseignant",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lapoul",
+  "traduction": "Battre en retraite, reculer devant le danger (sens propre, sens figuré)",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè on lè / Fè lè a-w",
+  "traduction": "Surveiller, être sur une piste",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lalwa",
+  "traduction": "Diriger, dicter sa loi",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lous",
+  "traduction": "Faire le gros dur",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lanmè",
+  "traduction": "Descendre, aller vers la mer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè on ti lélé pou gaga vwè",
+  "traduction": "Faire un petit essai pour voir",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lafimé",
+  "traduction": "S'enfuir",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè labé",
+  "traduction": "Entrer dans les ordres",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lésè",
+  "traduction": "Devenir religieuse",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè léspri a-w travay",
+  "traduction": "Réfléchis",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè lawmè",
+  "traduction": "Faire le service militaire",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè on lantou",
+  "traduction": "Faire un tour, se balader",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè mal",
+  "traduction": "Faire de la sorcellerie",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè mas",
+  "traduction": "Se déguiser pour le carnaval / faire des simagrées",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè makonmè",
+  "traduction": "Être homosexuel, gay",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè mannèv",
+  "traduction": "Se dépêcher / s'activer",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè mòn",
+  "traduction": "Monter, aller vers le haut du morne",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè mab",
+  "traduction": "Durcir, épaissir",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè nonm",
+  "traduction": "Jouer à l'homme",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè nwa",
+  "traduction": "Danser en se frottant contre sa partenaire",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Pran fè",
+  "traduction": "Souffrir",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè pè",
+  "traduction": "Dérober, voler",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè-y parèt",
+  "traduction": "Aboule le fric ! / Allonge !",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè rèd",
+  "traduction": "Bander, entrer en érection",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "I fè si-y",
+  "traduction": "Il a chié dans son froc",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè sòs",
+  "traduction": "Saliver, mettre l'eau à la bouche",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè soukougnan",
+  "traduction": "Se transformer en soukougnan",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè sans / Fè sik / Fè siléma",
+  "traduction": "Faire des façons / des manières",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè so",
+  "traduction": "Aller vider son seau hygiénique",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè so",
+  "traduction": "Résister, se rebeller",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè-y si",
+  "traduction": "Le faire au culot / à l'estomac",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè-y si",
+  "traduction": "Se tirer, s'en aller",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè-y si",
+  "traduction": "Faire cocu",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè ta-y",
+  "traduction": null,
+  "exemple_kr": "I ka fè ta-y",
+  "exemple_fr": "Il fait son beurre"
+ },
+ {
+  "expression": "Ka ou fè ?",
+  "traduction": "Comment vas-tu ? / Bonjour !",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Las fè vyé nèg",
+  "traduction": "Arrête de faire le mal élevé",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "I ka fè-w vwè mizè",
+  "traduction": "Il te fait souffrir",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè wòl",
+  "traduction": "Raconter des bobards / tourner autour du pot",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè wodomon",
+  "traduction": "Faire le gros dur",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè won",
+  "traduction": "Tourner autour du pot",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè on won",
+  "traduction": "Faire un tour",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "An pa fè ni yonn ni dé",
+  "traduction": "Je n'ai fait ni une, ni deux",
+  "exemple_kr": null,
+  "exemple_fr": null
+ },
+ {
+  "expression": "Fè zanmi",
+  "traduction": "Être homosexuelle, lesbienne",
+  "exemple_kr": null,
+  "exemple_fr": null
+ }
+]
