@@ -5,7 +5,7 @@ import PiedDePage from '@/components/PiedDePage';
 import { ANCIEN_DOMAINE, ANCIEN_NOM, annonceActive } from '@/lib/annonce';
 import { rideauActif } from '@/lib/lancement';
 import { textes } from '@/lib/langue';
-import { noterVisite } from '@/lib/statistiques';
+import CompteurVisite from '@/components/CompteurVisite';
 import { COOKIE_ADMIN } from '@/lib/session';
 import { SITE_URL } from '@/lib/site';
 
@@ -18,7 +18,6 @@ export default async function SiteLayout({ children }) {
   if (rideauActif()) {
     avertir = Boolean((await cookies()).get(COOKIE_ADMIN)?.value);
   }
-  await noterVisite();
   const { t } = await textes();
 
   return (
@@ -27,6 +26,7 @@ export default async function SiteLayout({ children }) {
       <EnTete />
       <main id="contenu">{children}</main>
       <PiedDePage />
+      <CompteurVisite />
       {annonceActive() && (
         <AnnonceNom
           t={t.annonce}

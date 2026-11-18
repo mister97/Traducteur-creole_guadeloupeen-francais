@@ -31,8 +31,8 @@ export default async function PageStatistiques({ searchParams }) {
       <h1 className="admin__titre">Statistiques</h1>
       <p className="admin__sous-titre">
         Aucun cookie, aucune adresse IP conservée. Les visiteurs sont comptés par une empreinte qui change chaque jour : on sait
-        combien de personnes sont venues aujourd’hui, jamais si l’une d’elles était déjà là hier. Les robots d’indexation sont écartés, et
-        vos propres passages sur le site ne sont pas comptés tant que vous êtes connecté ici.
+        combien de personnes sont venues aujourd’hui, jamais si l’une d’elles était déjà là hier. Vos propres passages ne sont pas
+        comptés tant que vous êtes connecté ici.
       </p>
 
       {p.ok && <div className="alerte alerte--succes">Enregistré.</div>}
@@ -49,7 +49,7 @@ export default async function PageStatistiques({ searchParams }) {
         </div>
         <div className="chiffre">
           <strong>{formaterNombre(visites.total.pages)}</strong>
-          <span>pages vues (au moins)</span>
+          <span>pages vues</span>
         </div>
         <div className="chiffre">
           <strong>{visites.total.visiteurs ? (visites.total.pages / visites.total.visiteurs).toFixed(1) : '0'}</strong>
@@ -62,10 +62,13 @@ export default async function PageStatistiques({ searchParams }) {
       </div>
 
       <p className="tableau__discret" style={{ marginTop: -6 }}>
-        Le nombre de <strong>visiteurs est exact</strong> : l’arrivée sur le site passe toujours par le serveur. Les{' '}
-        <strong>pages vues sont un minimum</strong> : quand le navigateur a déjà préchargé une page au survol du lien, l’ouvrir
-        ensuite ne redemande rien au serveur. Mieux vaut manquer des pages réellement lues que compter des pages que personne n’a
-        ouvertes.
+        Une visite n’est comptée que lorsque la page s’est réellement affichée dans un navigateur. Les robots ne sont donc pas
+        comptés, même ceux qui se font passer pour un navigateur : ils ne lisent pas le JavaScript de la page. Revers de la
+        médaille, un visiteur qui a désactivé JavaScript échappe au comptage.
+      </p>
+      <p className="tableau__discret">
+        Les chiffres <strong>antérieurs au 18 novembre 2026</strong> ont été mesurés autrement et comptaient ces robots : ils sont
+        gonflés, parfois de plusieurs milliers sur une seule journée. Ils ne sont pas comparables à ceux qui suivent.
       </p>
 
       {visites.lignes.length === 0 ? (
@@ -81,7 +84,7 @@ export default async function PageStatistiques({ searchParams }) {
               <tr>
                 <th>Jour</th>
                 <th>Visiteurs</th>
-                <th>Pages vues (au moins)</th>
+                <th>Pages vues</th>
               </tr>
             </thead>
             <tbody>
